@@ -9,5 +9,8 @@
     "dev": "nodemon server.js"
   },
   "author": "Ahnad Hassan Khan (@mrahmadhassankhan--> Github)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.3"
+  }
 }

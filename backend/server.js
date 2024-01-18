@@ -1,11 +1,8 @@
 const express = require("express");
-const userrouter = require("../backend/Routers/userRouter");
-
+const userrouter = require("./Routers/userRouter");
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// Middleware to parse JSON requests
-app.use(express.json());
+const PORT = process.env.PORT || 3000;
 
 // Define routes
 app.use("/api", userrouter);
