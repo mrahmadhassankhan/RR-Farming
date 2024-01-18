@@ -1,9 +1,13 @@
-const Login = (req, res) => {
-  res.status(200).json({ message: "Login Called" });
+const Register = async (req, res) => {
+  const { username, email, password } = req.body;
+  res.json({
+    username,
+    email,
+  });
 };
 
-const Register = (req, res) => {
-  res.status(200).json({ message: "Register Called" });
+const Login = async (req, res) => {
+  res.status(200).json({ message: "Login Called" });
 };
 
 module.exports = { Login, Register };
