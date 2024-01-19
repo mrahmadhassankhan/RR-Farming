@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 // Connection string to your MongoDB database
-const dbURI = "mongodb://localhost:27017/";
+const dbURI = "mongodb://localhost:27017/FarmApp";
 
 // Connect to MongoDB
 mongoose.connect(dbURI);
