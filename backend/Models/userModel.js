@@ -32,6 +32,9 @@ userSchema.pre("save", async function(next) {
   this.password = await bcrpt.hash(this.password, salt); // Basically we are encrypting the password enter by user
 });
 
-const UserModel = mongoose.model("User", userSchema); // Created User Model
+userSchema.methods.matchPassword = async function(enteredPassword) {
+  return await bcrpt.compare(enteredPassword, this.password);
+};
+const UserModel = mongoose.model("User", userSchema); // Created User Model*
 
 module.exports = UserModel;
