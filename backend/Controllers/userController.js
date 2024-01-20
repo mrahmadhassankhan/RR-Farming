@@ -1,5 +1,6 @@
 const User = require("../Models/userModel"); // Imported the User Model
 const asynchandler = require("express-async-handler"); // For Error Handling
+const generateToken = require("../utils/generateToken");
 
 const Register = asynchandler(async (req, res) => {
   const { username, email, password } = req.body;
@@ -24,6 +25,7 @@ const Register = asynchandler(async (req, res) => {
       _id: user.id,
       username: user.username,
       email: user.email,
+      token: generateToken(user._id),
     });
   } else {
     res.status(400);
@@ -38,6 +40,7 @@ const Login = asynchandler(async (req, res) => {
     res.json({
       _id: user._id,
       name: user.username,
+      token: generateToken(user._id),
     });
   } else {
     res.status(400);
