@@ -29,15 +29,20 @@ const Register = asynchandler(async (req, res) => {
     res.status(400);
     throw new Error("Error Occured!");
   }
-
-  // res.json({
-  //   username,
-  //   email,
-  // });
 });
 
 const Login = asynchandler(async (req, res) => {
-  res.status(200).json({ message: "Login Called" });
+  const { email, password } = req.body;
+  const user = await User.findOne({ email });
+  if (user && user.matchPassword(password)) {
+    res.json({
+      _id: user._id,
+      name: user.username,
+    });
+  } else {
+    res.status(400);
+    throw new Error("Invalid Email or  Passoword");
+  }
 });
 
 module.exports = { Login, Register };
