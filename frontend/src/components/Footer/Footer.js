@@ -1,5 +1,6 @@
 import React from 'react'
 import './Footer.css'
+import {Link} from 'react-router-dom'
 
 
 export default function Footer() {
@@ -42,7 +43,7 @@ export default function Footer() {
                       <div className="col-xl-4 col-lg-4 mb-50">
                           <div className="footer-widget">
                               <div className="footer-logo">
-                                  <a href="index.html"><img src="https://i.ibb.co/QDy827D/ak-logo.png" className="img-fluid" alt="logo"/></a>
+                                  <Link to="index.html"><img src="https://i.ibb.co/QDy827D/ak-logo.png" className="img-fluid" alt="logo"/></Link>
                               </div>
                               <div className="footer-text">
                                   <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
@@ -50,9 +51,9 @@ export default function Footer() {
                               </div>
                               <div className="footer-social-icon">
                                   <span>Follow us</span>
-                                  <a href="#"><i className="fab fa-facebook-f facebook-bg"></i></a>
-                                  <a href="#"><i className="fab fa-twitter twitter-bg"></i></a>
-                                  <a href="#"><i className="fab fa-google-plus-g google-bg"></i></a>
+                                  <Link to="#"><i className="fab fa-facebook-f facebook-bg"></i></Link>
+                                  <Link to="#"><i className="fab fa-twitter twitter-bg"></i></Link>
+                                  <Link to="#"><i className="fab fa-google-plus-g google-bg"></i></Link>
                               </div>
                           </div>
                       </div>
@@ -62,16 +63,16 @@ export default function Footer() {
                                   <h3>Useful Links</h3>
                               </div>
                               <ul>
-                                  <li><a href="#">Home</a></li>
-                                  <li><a href="#">about</a></li>
-                                  <li><a href="#">services</a></li>
-                                  <li><a href="#">portfolio</a></li>
-                                  <li><a href="#">Contact</a></li>
-                                  <li><a href="#">About us</a></li>
-                                  <li><a href="#">Our Services</a></li>
-                                  <li><a href="#">Expert Team</a></li>
-                                  <li><a href="#">Contact us</a></li>
-                                  <li><a href="#">Latest News</a></li>
+                                  <li><Link to="#">Home</Link></li>
+                                  <li><Link to="#">about</Link></li>
+                                  <li><Link to="#">services</Link></li>
+                                  <li><Link to="#">portfolio</Link></li>
+                                  <li><Link to="#">Contact</Link></li>
+                                  <li><Link to="#">About us</Link></li>
+                                  <li><Link to="#">Our Services</Link></li>
+                                  <li><Link to="#">Expert Team</Link></li>
+                                  <li><Link to="#">Contact us</Link></li>
+                                  <li><Link to="#">Latest News</Link></li>
                               </ul>
                           </div>
                       </div>
@@ -99,7 +100,7 @@ export default function Footer() {
                   <div className="row">
                       <div className="col-xl-6 col-lg-6 text-center text-lg-left">
                           <div className="copyright-text text-center">
-                              <p>Copyright &copy; 2018, All Right Reserved <a href="https://codepen.io/anupkumar92/">Anup</a></p>
+                              <p>Copyright &copy; 2018, All Right Reserved <Link to="https://codepen.io/anupkumar92/">Anup</Link></p>
                           </div>
                       </div>
                   </div>

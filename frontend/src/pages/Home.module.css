@@ -1,0 +1,48 @@
+/* Home.module.css */
+
+.home {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    width: 100vh;
+    height: 90vh;
+}
+
+@media (min-width: 768px) {
+    .home {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .home {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+/* Add more media queries as needed for different breakpoints */
+
+/* Additional styles */
+.h1 {
+    font-size: 1.5em;
+}
+
+.h4 {
+    font-size: 1.2em;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+}
+
+.input,
+.button {
+    margin: 5px 0;
+}
+
+.rabbit{
+    height: 30em;
+    width: 30em;
+}
