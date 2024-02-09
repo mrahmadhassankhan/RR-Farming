@@ -1,53 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react';
+import CSS from './Header.module.css';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
-        <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <div className="container-fluid">
-                    <Link className="navbar-brand" to="/">Navbar</Link>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to='/categories'>Categories</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/blog">Blog</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/contact">Contact</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/aboutus">About Us</Link>
-                            </li>
-                            <li className="nav-item dropdown">
-                                <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
-                                </Link>
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><Link className="dropdown-item" to="#">Action</Link></li>
-                                    <li><Link className="dropdown-item" to="#">Another action</Link></li>
-                                    <li><hr className="dropdown-divider"></hr></li>
-                                    <li><Link className="dropdown-item" to="#">Something else here</Link></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <form className="d-flex">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                                <button className='btn btn-outline-success' type="submit">Search</button>
-                        </form>
-                    </div>
+        <header className={CSS.header}>
+            <div className={CSS.navBar}>
+                <div className={CSS.logos}>
+                    <Link className={CSS.logo} to='/'>Farming Product</Link>
                 </div>
-            </nav>
-        </div>
-    )
-}
+                <ul className={CSS.links}>
+                    <li className={CSS.items}><Link className={`${CSS.navItem} ${CSS.active}`} to=''>Home</Link></li>
+                    <li className={CSS.items}><Link className={CSS.navItem} to=''>Categories</Link></li>
+                    <li className={CSS.items}><Link className={CSS.navItem} to=''>Blog</Link></li>
+                    <li className={CSS.items}><Link className={CSS.navItem} to=''>Contact</Link></li>
+                    <li className={CSS.items}><Link className={CSS.navItem} to=''>About</Link></li>
+                </ul>
+                <Link to='/' className={CSS.action_btn}>Get Started</Link>
+                <div className={CSS.toggle_btn} onClick={toggleMenu}>
+                    <i className={isOpen ? "fa-solid fa-times" : "fa-solid fa-bars"}></i>
+                </div>
+            </div>
+            <div className={`${CSS.dropdown_menu} ${isOpen ? CSS.open : ''}`}>
+                <li className={CSS.items}><Link className={`${CSS.navItem} ${CSS.active}`} to=''>Home</Link></li>
+                <li className={CSS.items}><Link className={CSS.navItem} to=''>Categories</Link></li>
+                <li className={CSS.items}><Link className={CSS.navItem} to=''>Blog</Link></li>
+                <li className={CSS.items}><Link className={CSS.navItem} to=''>Contact</Link></li>
+                <li className={CSS.items}><Link className={CSS.navItem} to=''>About</Link></li>
+                <li className={CSS.items}><Link className={CSS.action_btn} to='/'>Get Started</Link></li>
+            </div>
+        </header>
+    );
+};
 
 export default Header;
