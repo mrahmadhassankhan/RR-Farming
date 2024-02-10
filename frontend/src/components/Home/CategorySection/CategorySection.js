@@ -1,39 +1,28 @@
 import React from 'react'
 import CSS from './CategorySection.module.css'
 import { Link } from 'react-router-dom'
-import img from '../../../images/rabbit.jpg'
+import rabbit1 from '../../../images/rabbit1.jpg'
+import rabbit2 from '../../../images/rabbit2.jpg'
+import rabbit3 from '../../../images/rabbit3.jpg'
+import rabbitmeat1 from '../../../images/rabbitmeat1.jpg'
+import rabbitmeat2 from '../../../images/rabbitmeat2.jpg'
 
 const CategorySection = () => {
     const CategoryArray = [{
-        title: "Rabbit Meat",
-        img: img
+        title: "Rabbit Angora",
+        img: rabbit1
     }, {
-        title: "Rabbit Meat",
-        img: img
+        title: "Rabbit Lionhead",
+        img: rabbit2
     }, {
-        title: "Rabbit Meat",
-        img: img
+        title: "Rabbit Belgian ",
+        img: rabbit3
     }, {
-        title: "Rabbit Meat",
-        img: img
-    }, {
-        title: "Rabbit Meat",
-        img: img
-    }, {
-        title: "Rabbit Meat",
-        img: img
-    }, {
-        title: "Rabbit Meat",
-        img: img
+        title: "Angora Meat",
+        img: rabbitmeat1
     },{
-        title: "Rabbit Meat",
-        img: img
-    }, {
-        title: "Rabbit Meat",
-        img: img
-    },{
-        title: "Rabbit Meat",
-        img: img
+        title: "Belgian Meat",
+        img: rabbitmeat2
     }];
     return (
         <div className='container'>
