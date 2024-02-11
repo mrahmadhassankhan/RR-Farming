@@ -64,11 +64,11 @@ export default function Footer() {
                                     <h3>Useful Links</h3>
                                 </div>
                                 <ul>
-                                    <li><Link to="#">Home</Link></li>
-                                    <li><Link to="#">About</Link></li>
-                                    <li><Link to="#">Categories</Link></li>
-                                    <li><Link to="#">Blog</Link></li>
-                                    <li><Link to="#">Contact</Link></li>
+                                    <li><Link to="/">Home</Link></li>
+                                    <li><Link to="/aboutus">About</Link></li>
+                                    <li><Link to="/category">Categories</Link></li>
+                                    <li><Link to="/blog">Blog</Link></li>
+                                    <li><Link to="/contact">Contact</Link></li>
 
 
                                 </ul>
@@ -98,7 +98,7 @@ export default function Footer() {
                     <div className="row text-center">
                         <div className="col-xl-6 col-lg-6 text-center text-lg-left">
                             <div className="copyright-text text-center">
-                                <p className='text-center'>Copyright &copy; 2018, All Right Reserved <Link to="https://codepen.io/anupkumar92/">Farming Product</Link></p>
+                                <p className='text-center'>Copyright &copy; 2024, All Right Reserved By <Link to="https://linktr.ee/abubakarnangri">Abu Bakar Siddique</Link></p>
                             </div>
                         </div>
                     </div>
