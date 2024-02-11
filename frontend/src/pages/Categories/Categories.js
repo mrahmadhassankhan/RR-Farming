@@ -1,16 +1,15 @@
 import React from 'react'
-import Header from '../../components/Header/Header';
+import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
 
 const Categories = () => {
   return (
     <div>
       <Header />
-      Categories
-      sddf
-      sdfddsf
-      sdfsd
+      category
+      <Footer />
     </div>
   )
 }
 
-export default Categories;
+export default Categories

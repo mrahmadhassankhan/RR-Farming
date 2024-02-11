@@ -3,7 +3,7 @@
     justify-content: start;
     align-items: end;
     flex-direction: row;
-    background-color: #504a4aa4;
+    background-color: var(--card-color);
     width: 16rem;
     height: 16rem;
     border-radius: 1rem;
@@ -59,9 +59,9 @@
 .button {
     font-weight: 700;
     font-size: 1.2rem;
-    background-color: #ff5e14ed;
+    background-color: var(--primary-color);
     border: none;
-    color: #fff;
+    color: var(--white-color);
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -70,6 +70,11 @@
     width: 9rem;
     height: 3rem;
 }
+
+.button:hover{
+    background-color: var(--button-hover-color);
+    color: var(--white-color);
+  }
 
 
 .card-data-container {
@@ -96,7 +101,7 @@
 }
 
 .card-icon {
-    color: #ff5e14ed;
+    color: var(--primary-color);
     margin: 1.3rem 0 0 1.5rem;
     cursor: pointer;
     z-index: 2;

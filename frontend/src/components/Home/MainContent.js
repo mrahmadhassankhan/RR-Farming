@@ -1,10 +1,10 @@
 import React from 'react'
-import CSS from './Grid.module.css'
+import CSS from './MainContent.module.css'
 import SpecialOfferSection from './SpecialOfferSection/SpecialOfferSection'
 import TrendingProduct from './TrendProductSection/TrendingProduct'
 import OurSpecial from './OurSpecialSection/OurSpecial'
 
-const Grid = () => {
+const MainContent = () => {
   return (
     <div className={`${CSS['grid-container']} container`}>
         <div className={CSS['special-offer']}><SpecialOfferSection/></div>
@@ -14,4 +14,4 @@ const Grid = () => {
   )
 }
 
-export default Grid
+export default MainContent

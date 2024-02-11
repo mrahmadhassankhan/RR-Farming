@@ -5,7 +5,7 @@
     display: inline-block;
     align-items: center;
     justify-content: center;
-    background-color: #504a4aa4;
+    background-color: var(--card-color);
     border-radius: 1rem;
     margin: 0.4rem 0;
     position: relative;
@@ -37,7 +37,7 @@
 }
 
 .special-discount{
-    background-color: #ff5e14;
+    background-color: var(--primary-color);
     width: 55px;
     height: 55px;
     font-size: 1rem;
@@ -54,7 +54,7 @@
     border-radius: 0.7rem;
     background-position: center;
     background-size: cover;
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.2s ease-in-out;
     cursor: pointer;
 }
 
@@ -63,20 +63,27 @@
     z-index: 20;
 }
 
-.search-btn{
+.btn-link{
+    width: 90%;
+    height: 44px;
     margin: 1rem;
+    position: relative;
+}
+
+.search-btn{
+    margin: 0.5rem;
     width: 90%;
     height: 44px;
     font-size: 1.1rem;
     font-weight:bold;
-    color: #fff;
-    background-color: #ff5e14;
+    color: var(--white-color);
+    background-color: var(--primary-color);
     border: none;
     border-radius: 5rem;
 }
 
 .search-btn:hover{
-    color: #fff;
-    background-color: #ad4d1c;
+    color: var(--white-color);
+    background-color: var(--button-hover-color);
     border: none;
 }

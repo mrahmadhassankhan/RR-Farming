@@ -4,19 +4,19 @@
 
 .items .navItem, .logo, .action_btn{
   text-decoration: none;
-  color: #fff;
+  color: var(--white-color);
   font-size: 1rem;
 }
 
 .navItem:hover, .logo:hover, .action_btn:hover, .active{
-  color: #ff5e14;
+  color: var(--primary-color);
 }
 
 /* Header Css */
 .header{
   position: relative;
   padding: 0 2rem;
-  background-color: #151414;
+  background-color: var(--background-color);
 }
 
 .navBar{
@@ -39,15 +39,15 @@
 }
 
 .navBar .toggle_btn{
-  color: #fff;
+  color: var(--white-color);
   font-size: 1.5rem;
   cursor: pointer;
   display: none;
 }
 
 .action_btn{
-  background-color: #ff5e14;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--white-color);
   padding: 0.5rem 1rem;
   border: none;
   outline: none;
@@ -58,8 +58,8 @@
 }
 
 .action_btn:hover{
-  scale: 1.05;
-  color: #FFF;
+  background-color: var(--button-hover-color);
+  color: var(--white-color);
 }
 
 .action_btn:active{

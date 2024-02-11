@@ -5,7 +5,7 @@
     display: inline-block;
     align-items: center;
     justify-content: center;
-    background-color: #504a4aa4;
+    background-color: var(--card-color);
     border-radius: 1rem;
     margin: 0px .6rem;
     position: relative;
@@ -42,7 +42,7 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     text-align: center;
-    color: #fff;
+    color: var(--white-color);
 }
 
 .card-img:hover .button-container {
@@ -65,9 +65,9 @@
 .button {
     font-weight: 700;
     font-size: 1.2rem;
-    background-color: #ff5e14ed;
+    background-color: var(--primary-color);
     border: none;
-    color: #fff;
+    color: var(--white-color);
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -75,6 +75,12 @@
     border-radius: 5rem;
     width: 9rem;
     height: 3rem;
+}
+
+.button:hover{
+    color: var(--white-color);
+    background-color: var(--button-hover-color);
+    border: none;
 }
 
 @media (max-width:550px) {

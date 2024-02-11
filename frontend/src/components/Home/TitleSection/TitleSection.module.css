@@ -33,12 +33,12 @@
 }
 
 .input-field:focus{
-    background-color: #504a4aa4;
+    background-color: var(--card-color);
     outline-width: 2px;
     outline-style:double;
-    outline-color: #ff5e14;
+    outline-color: var(--primary-color);
     outline-offset: 0px;
-    color: #fff;
+    color: var(--white-color);
 }
 
 .serach-icon{
@@ -54,15 +54,15 @@
     height: 44px;
     font-size: 1.1rem;
     font-weight:bold;
-    color: #fff;
-    background-color: #ff5e14;
+    color: var(--white-color);
+    background-color: var(--primary-color);
     border: none;
     border-radius: 0.5rem;
 }
 
 .search-btn:hover{
-    color: #fff;
-    background-color: #ad4d1c;
+    color: var(--white-color);
+    background-color: var(--button-hover-color);
     border: none;
 }
 

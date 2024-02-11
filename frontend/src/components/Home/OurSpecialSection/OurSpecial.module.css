@@ -1,5 +1,5 @@
 .special-div{
-    background-color: #504a4aa4;
+    background-color: var(--card-color);
     border-radius: 5rem;
 }
 
