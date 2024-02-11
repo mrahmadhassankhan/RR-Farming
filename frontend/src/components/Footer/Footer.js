@@ -95,10 +95,10 @@ export default function Footer() {
             </div>
             <div className="copyright-area">
                 <div className="container">
-                    <div className="row">
+                    <div className="row text-center">
                         <div className="col-xl-6 col-lg-6 text-center text-lg-left">
                             <div className="copyright-text text-center">
-                                <p>Copyright &copy; 2018, All Right Reserved <Link to="https://codepen.io/anupkumar92/">Farming Product</Link></p>
+                                <p className='text-center'>Copyright &copy; 2018, All Right Reserved <Link to="https://codepen.io/anupkumar92/">Farming Product</Link></p>
                             </div>
                         </div>
                     </div>
