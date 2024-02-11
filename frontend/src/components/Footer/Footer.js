@@ -47,7 +47,7 @@ export default function Footer() {
                                 </div>
                                 <div className="footer-text">
                                     <p>Welcome to BunnyBites - where go-to for cute companions and gourmet rabbit meat. Find joy in furry friendships
-                                        and elevate your culinary adventures with our premium selection. Delight awaits at BunnyBites!
+                                        and elevate your culinary adventures with our premium selection. Delight awaits at BunnyBites! 🐇🍴
                                     </p>
                                 </div>
                                 <div className="footer-social-icon">
@@ -98,7 +98,7 @@ export default function Footer() {
                     <div className="row">
                         <div className="col-xl-6 col-lg-6 text-center text-lg-left">
                             <div className="copyright-text text-center">
-                                <p>Copyright &copy; 2018, All Right Reserved <Link to="https://codepen.io/anupkumar92/">Anup</Link></p>
+                                <p>Copyright &copy; 2018, All Right Reserved <Link to="https://codepen.io/anupkumar92/">Farming Product</Link></p>
                             </div>
                         </div>
                     </div>
