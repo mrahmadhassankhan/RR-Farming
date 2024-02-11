@@ -3,12 +3,12 @@ import CSS from './CommunityCard.module.css'
 import img from '../../TrendProductSection/images/rabbit2.jpg'
 import { Link } from 'react-router-dom'
 
-function CommunityCard() {
+function CommunityCard(props) {
   return (
     <div className={CSS['wrapper-grid']}>
       <div className={CSS['card-container']}>
         <div className={CSS['card-img']}>
-          <img className={CSS['img']} src={img} alt='Rabbit' />
+          <img className={CSS['img']} src={props.communityImg} alt='Rabbit' />
           <Link to={'/addtocart'} className={`${CSS['button-container']}`}>
             <button className={CSS['button']}>
               Join Community
@@ -16,11 +16,11 @@ function CommunityCard() {
           </Link>
         </div>
         <div className={CSS['card-data-container']}>
-          <h2 className={CSS['card-title']}>Discover the benefits of farming with us</h2>
-          <p className={CSS['card-subtitle']}>learn and grow with us</p>
+          <h2 className={CSS['card-title']}>{props.title}</h2>
+          <p className={CSS['card-subtitle']}>{props.subtitle}</p>
           <div className={CSS['card-user']}>
-            <img className={CSS['card-user-img']} src={img} alt='Community' />
-            <p className={CSS['card-user-name']}>Ali,</p>
+            <img className={CSS['card-user-img']} src={props.memberImg} alt='Community' />
+            <p className={CSS['card-user-name']}>{props.memberName}</p>
           </div>
         </div>
       </div>
