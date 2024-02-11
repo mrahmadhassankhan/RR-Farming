@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import CSS from './TrendingCard.module.css';
+import { Link } from 'react-router-dom';
 
 const TrendingCard = (props) => {
   const [dilIcon, setDilIcon] = useState(false);
@@ -13,11 +14,11 @@ const TrendingCard = (props) => {
       <div className={CSS['card-container']}>
         <div className={CSS['card-img']}>
           <img className={CSS['img']} src={props.img} alt='Rabbit' />
-          <div className={`${CSS['button-container']} button-container`}>
-            <button className={CSS['button']} onClick={() => alert('Button Clicked')}>
+          <Link to={'/addtocart'} className={`${CSS['button-container']} button-container`}>
+            <button className={CSS['button']}>
               Add to cart
             </button>
-          </div>
+          </Link>
         </div>
         <div className={CSS['card-data-container']}>
           <div className={CSS['card-data-inner-container1']}>
