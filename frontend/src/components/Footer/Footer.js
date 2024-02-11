@@ -11,7 +11,7 @@ export default function Footer() {
                   <div className="row">
                       <div className="col-xl-4 col-md-4 mb-30">
                           <div className="single-cta">
-                              <i class="fa-solid fa-location-dot"></i>
+                              <i className="fa-solid fa-location-dot"></i>
                               <div className="cta-text">
                                   <h4>Find us</h4>
                                   <span>1010 Avenue, sw 54321, chandigarh</span>

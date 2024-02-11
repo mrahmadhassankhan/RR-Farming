@@ -2,7 +2,7 @@ import React from 'react'
 import CSS from './Grid.module.css'
 import SpecialOfferSection from './SpecialOfferSection/SpecialOfferSection'
 import TrendingProduct from './TrendProductSection/TrendingProduct'
-import OurSpecial from './OurSpecial/OurSpecial'
+import OurSpecial from './OurSpecialSection/OurSpecial'
 
 const Grid = () => {
   return (

@@ -17,14 +17,14 @@ const TitleSection = () => {
           <div className={CSS['main-data']}>
             <h2 className={CSS['main-title']}>The Best place to buy fresh and organic Rabbit and its Meat</h2>
             <h6 className={CSS['main-subtitle']}>Shop by category, brand or products on sale!</h6>
-            <from onSubmit={handleSearch}>
+            <form onSubmit={handleSearch}>
               <input type='text' className={CSS['input-field']} onChange={handleInputdata} value={searchValue} placeholder='What are you looking for?' spellCheck='true' />
-              <i class={` ${CSS['serach-icon']} fa-solid fa-magnifying-glass`}></i>
+              <i className={` ${CSS['serach-icon']} fa-solid fa-magnifying-glass`}></i>
               <button type='submit' className={CSS['search-btn']}>Search</button>
-            </from>
+            </form>
           </div>
           <div className={CSS['div-rabbit-img']}>
-            <img src={img} alt='Rabbit Pic' class={CSS['main-rabbit-img']}/>
+            <img src={img} alt='Rabbit Pic' className={CSS['main-rabbit-img']}/>
           </div>
         </div>
       </div>

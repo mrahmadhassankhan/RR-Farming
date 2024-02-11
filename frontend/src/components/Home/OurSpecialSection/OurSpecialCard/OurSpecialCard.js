@@ -7,8 +7,10 @@ const OurSpecialCard = (props) => {
             <div className={CSS['card-img']}>
                 <img className={CSS['img']} src={props.img} alt='Rabbit' />
                 <div className={`${CSS['button-container']} button-container`}>
+                    <p className={CSS['title']}>{props.title}</p>
+                    <p className={CSS['para']}>{props.subtitle}</p>
                     <button className={CSS['button']} onClick={() => alert('Button Clicked')}>
-                        Add to cart
+                        {props.button}
                     </button>
                 </div>
             </div>
