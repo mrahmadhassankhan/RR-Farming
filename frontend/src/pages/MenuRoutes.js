@@ -7,6 +7,7 @@ import Blog from './Blog/Blog';
 import Categories from './Categories/Categories';
 import Contact from './Contact/Contact';
 import Login from './Login/Login';
+import CheckOut from '../components/CheckOut/CheckOut';
 
 const MenuRoutes = () => {
   return (
@@ -19,6 +20,7 @@ const MenuRoutes = () => {
         <Route path='/category' element={<Categories/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/checkout' element={<CheckOut/>}/>
       </Routes>
     </Router>
   );

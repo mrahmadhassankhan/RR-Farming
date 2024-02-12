@@ -30,7 +30,7 @@ const AddtocartCard = () => {
                     <div className={CSS['addtocart-quantity']}>
                         Qty: <input min={'0'} max={'20'} type='number' name='quantity' className={CSS['addtocart-qty-input']} placeholder='0' value={quantity} onChange={handleInputData} />
                     </div>
-                    <Link className={CSS['addtocart-link']}>
+                    <Link to={'/checkout'} className={CSS['addtocart-link']}>
                         <form onSubmit={handleSubmitForm}>
                             <button type='submit' className={CSS['addtocart-link-btn']}>Add to cart</button>
                         </form>
