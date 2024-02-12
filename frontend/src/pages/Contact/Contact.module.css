@@ -20,7 +20,7 @@
         "contactus-img contactus-details";
     text-align: center;
     position: relative;
-    background-color: rgba(255, 255, 255, 0.068);
+    background-color: rgba(255, 255, 255, 0.082);
 }
 
 .contactus-img {
@@ -143,7 +143,6 @@
 
 @media (max-width:550px) {
     .contactus-container {
-        margin: 0px;
         grid-template-columns: 1fr;
         grid-template-rows: 0.6fr 1fr;
         grid-template-areas: "contactus-img" "contactus-details";
@@ -180,7 +179,7 @@
     }
 }
 
-@media (min-width:551px)and (max-width:1023px){
+@media (min-width:551px)and (max-width:1024px){
     .contactus-subject-container,
     .contactus-message-container {
         display: flex;
