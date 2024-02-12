@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CSS from "./TrendingCard.module.css";
 import { Link } from "react-router-dom";
 
-const TrendingCard = ({ trendingproduct }) => {
+const TrendingCard = ({ item }) => {
   const [dilIcon, setDilIcon] = useState(false);
 
   const handleDilIcon = () => {
@@ -15,8 +15,8 @@ const TrendingCard = ({ trendingproduct }) => {
         <div className={CSS["card-img"]}>
           <img
             className={CSS["img"]}
-            src={trendingproduct.productImage}
-            alt={trendingproduct.title}
+            src={item.img}
+            alt={item.title}
           />
           <Link
             to={"/addtocart"}
@@ -27,7 +27,7 @@ const TrendingCard = ({ trendingproduct }) => {
         </div>
         <div className={CSS["card-data-container"]}>
           <div className={CSS["card-data-inner-container1"]}>
-            <p className={CSS["card-title"]}>{trendingproduct.title}</p>
+            <p className={CSS["card-title"]}>{item.title}</p>
             <i
               onClick={handleDilIcon}
               className={`${CSS["card-icon"]} ${
@@ -36,8 +36,8 @@ const TrendingCard = ({ trendingproduct }) => {
             ></i>
           </div>
           <div className={CSS["card-data-inner-container2"]}>
-            <p className={CSS["new-price"]}>${trendingproduct.newPrice}</p>
-            <del className={CSS["old-price"]}>${trendingproduct.oldPrice}</del>
+            <p className={CSS["new-price"]}>${item.newPrice}</p>
+            <del className={CSS["old-price"]}>${item.oldPrice}</del>
           </div>
         </div>
       </div>
