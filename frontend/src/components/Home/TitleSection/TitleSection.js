@@ -18,8 +18,8 @@ const TitleSection = () => {
             <h2 className={CSS['main-title']}>The Best place to buy fresh and organic Rabbit and its Meat</h2>
             <h6 className={CSS['main-subtitle']}>Shop by category, brand or products on sale!</h6>
             <form onSubmit={handleSearch}>
-              <input type='text' className={CSS['input-field']} onChange={handleInputdata} value={searchValue} placeholder='What are you looking for?' spellCheck='true' />
-              <i className={` ${CSS['serach-icon']} fa-solid fa-magnifying-glass`}></i>
+              <input name='search-input' type='text' className={CSS['input-field']} onChange={handleInputdata} value={searchValue} placeholder='What are you looking for?' spellCheck='true' />
+              <i className={`${CSS['serach-icon']} fa-solid fa-magnifying-glass`}></i>
               <button type='submit' className={CSS['search-btn']}>Search</button>
             </form>
           </div>

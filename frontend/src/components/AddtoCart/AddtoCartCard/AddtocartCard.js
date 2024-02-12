@@ -28,7 +28,7 @@ const AddtocartCard = () => {
                     <h4 className={CSS['addtocart-new-price']}>$15.49 <del className={CSS['addtocart-old-price']}>$28.65</del></h4>
                     <p className={CSS['addtocart-details']}>A one of a kind heated rabbit meat and vegetables, including a delicious taste and warming features.</p>
                     <div className={CSS['addtocart-quantity']}>
-                        Qty: <input min={'0'} max={'20'} type='number' name='quantity' className={CSS['addtocart-qty-input']} placeholder='0' value={quantity} onChange={handleInputData} />
+                        Qty: <input required min={'0'} max={'20'} type='number' name='quantity' className={CSS['addtocart-qty-input']} placeholder='0' value={quantity} onChange={handleInputData} />
                     </div>
                     <Link to={'/checkout'} className={CSS['addtocart-link']}>
                         <form onSubmit={handleSubmitForm}>

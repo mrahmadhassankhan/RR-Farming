@@ -1,0 +1,41 @@
+.container-fluid {
+    background-color: var(--background-color);
+    color: var(--white-color);
+}
+
+.contact-title{
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.contactus-container {
+    margin: 1.5rem auto 0 auto;
+    display: grid;
+    height: 100hv;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "contactus-img contactus-details";
+    text-align: center;
+    position: relative;
+}
+
+
+.contactus-details {
+    grid-area: contactus-details;
+    background-color: rgba(0, 99, 99, 0.616);
+}
+
+.contactus-img {
+    grid-area: contactus-img;
+}
+
+@media only screen and (max-width:550px) {
+    .contactus-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "contactus-img" "contactus-details";
+    }
+}
