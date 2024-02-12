@@ -18,6 +18,7 @@
     text-align: center;
     flex-direction: column;
     margin: 0.8rem;
+    cursor: pointer;
 }
 
 .special-offer-subtitle{
@@ -54,7 +55,7 @@
     background-position: center;
     background-size: cover;
     transition: transform 0.2s ease-in-out;
-    cursor: pointer;
+    cursor: zoom-in;
 }
 
 .special-offer-img:hover{

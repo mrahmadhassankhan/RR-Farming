@@ -46,7 +46,7 @@
 }
 
 .action_btn{
-  background-color: var(--primary-color);
+  background-color: transparent;
   color: var(--white-color);
   padding: 0.5rem 1rem;
   border: none;
@@ -55,10 +55,11 @@
   font-size: 0.8rem;
   font-weight: bold;
   cursor: pointer;
+  margin: 0px 2px;
 }
 
 .action_btn:hover{
-  background-color: var(--button-hover-color);
+  background-color: var(--primary-color);
   color: var(--white-color);
 }
 

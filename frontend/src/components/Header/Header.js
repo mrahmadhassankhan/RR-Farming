@@ -22,7 +22,12 @@ const Header = () => {
                     <li className={CSS.items}><Link className={CSS.navItem} to={'/contact'}>Contact</Link></li>
                     <li className={CSS.items}><Link className={CSS.navItem} to={'/aboutus'}>About</Link></li>
                 </ul>
-                <Link to={'/login'} className={CSS.action_btn}>Get Started</Link>
+                <div>
+                   
+                    <Link to={'/login'} className={CSS.action_btn}> <i className="fa-solid fa-cart-shopping"></i></Link>
+                    <Link to={'/login'} className={CSS.action_btn}><i className="fa-solid fa-user"></i></Link>
+                </div>
+
                 <div className={CSS.toggle_btn} onClick={toggleMenu}>
                     <i className={isOpen ? "fa-solid fa-times" : "fa-solid fa-bars"}></i>
                 </div>
@@ -33,7 +38,7 @@ const Header = () => {
                 <li className={CSS.items}><Link className={CSS.navItem} to={'/blog'}>Blog</Link></li>
                 <li className={CSS.items}><Link className={CSS.navItem} to={'/contact'}>Contact</Link></li>
                 <li className={CSS.items}><Link className={CSS.navItem} to={'/aboutus'}>About</Link></li>
-                <li className={CSS.items}><Link className={CSS.action_btn} to={'/login'}>Get Started</Link></li>
+                <li className={CSS.items}><Link className={CSS.action_btn} to={'/login'}>Login</Link></li>
             </div>
         </header>
     );
