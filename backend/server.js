@@ -2,12 +2,19 @@ const express = require("express");
 const db = require("../backend/Database/DatabaseConnection"); // Connection Handling MongoDB
 const userrouter = require("./Routers/userRouter");
 const app = express();
+const cors = require("cors");
 const {
   errorHandler,
   notFound,
 } = require("../backend/middlewares/errorMiddleware");
 const PORT = process.env.PORT || 3000;
 
+app.use(
+  cors({
+    origin: ["http://localhost:3002"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 // Define routes
