@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 // Connection string to your MongoDB database
-const dbURI = "mongodb://localhost:27017/FarmApp";
+const dbURI = "mongodb+srv://admin:adminPassword@farming.kjjo4gd.mongodb.net/";
 
 // Connect to MongoDB
 mongoose.connect(dbURI);
@@ -11,7 +11,7 @@ const db = mongoose.connection;
 
 // Event listeners for the connection
 db.on("connected", () => {
-  console.log(`Mongoose connected to ${dbURI}`);
+  console.log(`Mongoose connected`);
 });
 
 db.on("error", (err) => {
