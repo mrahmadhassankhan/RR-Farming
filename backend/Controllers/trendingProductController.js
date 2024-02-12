@@ -23,4 +23,9 @@ const trendingProduct = AsyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { trendingProduct };
+const getTredingProducts = AsyncHandler(async (req, res) => {
+  const trendingProducts = await trendingProductModel.find();
+  res.status(200).json(trendingProducts);
+});
+
+module.exports = { trendingProduct, getTredingProducts };
