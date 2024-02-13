@@ -25,7 +25,7 @@ const Header = () => {
                 </ul>
                 <div>
                    
-                    <Link to={'/login'} className={CSS.action_btn}> <i className="fa-solid fa-cart-shopping"></i></Link>
+                    <Link to={'/checkout'} className={CSS.action_btn}> <i className="fa-solid fa-cart-shopping"></i></Link>
                     <Link to={'/login'} className={CSS.action_btn}><i className="fa-solid fa-user"></i></Link>
                 </div>
 
