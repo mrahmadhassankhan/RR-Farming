@@ -13,14 +13,14 @@ const MenuRoutes = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/addtocart' element={<AddtoCart/>}/>
-        <Route path='/aboutus' element={<AboutUs/>}/>
-        <Route path='/blog' element={<Blog/>}/>
-        <Route path='/category' element={<Categories/>}/>
-        <Route path='/contact' element={<Contact/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/checkout' element={<CheckOut/>}/>
+        <Route path='/' element={<Home />} />
+        <Route path='/addtocart' element={<AddtoCart />} />
+        <Route path='/aboutus' element={<AboutUs />} />
+        <Route path='/blog' element={<Blog />} />
+        <Route path='/category' element={<Categories />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/checkout' element={<CheckOut />} />
       </Routes>
     </Router>
   );
