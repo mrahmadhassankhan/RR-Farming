@@ -8,6 +8,7 @@ import Categories from './Categories/Categories';
 import Contact from './Contact/Contact';
 import Login from './Login/Login';
 import CheckOut from '../components/CheckOut/CheckOut';
+import SearchShow from './SearchShow/SearchShow';
 
 const MenuRoutes = () => {
   return (
@@ -21,6 +22,7 @@ const MenuRoutes = () => {
         <Route path='/contact' element={<Contact />} />
         <Route path='/login' element={<Login />} />
         <Route path='/checkout' element={<CheckOut />} />
+        <Route path='//search-results' element={<SearchShow />} />
       </Routes>
     </Router>
   );

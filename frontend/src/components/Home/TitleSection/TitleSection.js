@@ -1,15 +1,19 @@
 import React, { useState } from 'react'
 import CSS from './TitleSection.module.css'
 import img from '../../../images/rabbit.jpg'
+import {useNavigate  } from 'react-router-dom'
 
-const TitleSection = () => {
+const TitleSection = ({SearchItem}) => {
     const [searchValue,setSearchvalue] = useState('');
-    const handleSearch = (event) =>{
-      event.defaultPrevented();
-  
-    }
+    const navigate  = useNavigate ();
     const handleInputdata = (event) => {
       setSearchvalue(event.target.value);
+    }
+    const handleSearch = (event) =>{
+      event.preventDefault();
+      const foundItems = SearchItem(searchValue)
+      localStorage.setItem('searchResults', JSON.stringify({ foundItems, searchValue }));
+      navigate('/search-results');
     }
     return (
       <div >

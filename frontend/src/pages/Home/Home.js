@@ -20,6 +20,35 @@ const Home = () => {
     fetchData();
   }, []);
 
+
+  const Data = [{
+    title:"Rabbit",
+    price:54
+  },{
+    title:"Goat",
+    price:54
+  },{
+    title:"Rabbit algera",
+    price:54
+  },{
+    title:"Meat",
+    price:54
+  },{
+    title:"Rabbit Meat",
+    price:54
+  },{
+    title:"Fish",
+    price:54
+  },{
+    title:"Cat",
+    price:54
+  },]
+
+  const HandleSearch = (searchValue) => {
+      const founditem = Data.filter(item => item.title.toLowerCase().includes(searchValue.toLowerCase()));
+      return founditem;
+  }
+
   return (
     <div className={`${CSS['container-fluid']} container-fluid`}>
       {isLoading ? (
@@ -27,7 +56,7 @@ const Home = () => {
       ) : (
         <div>
           <Header />
-          <TitleSection />
+          <TitleSection SearchItem={HandleSearch} />
           <CategorySection />
           <MainContent />
           <Community />
