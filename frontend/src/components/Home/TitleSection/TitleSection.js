@@ -3,6 +3,7 @@ import CSS from './TitleSection.module.css'
 import img from '../../../images/rabbit.jpg'
 import {useNavigate  } from 'react-router-dom'
 
+
 const TitleSection = ({SearchItem}) => {
     const [searchValue,setSearchvalue] = useState('');
     const navigate  = useNavigate ();
