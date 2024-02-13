@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CSS from './Header.module.css';
 import { Link } from 'react-router-dom';
+import RR_Logo from '../../images/RR192.png'
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,7 @@ const Header = () => {
         <header className={CSS.header}>
             <div className={CSS.navBar}>
                 <div className={CSS.logos}>
-                    <Link className={CSS.logo} to={'/'}>Farming Product</Link>
+                    <Link className={CSS.logo} to={'/'}><img className={CSS['RR-logo']} src={RR_Logo} alt='RR Farming'/></Link>
                 </div>
                 <ul className={CSS.links}>
                     <li className={CSS.items}><Link className={`${CSS.navItem} ${CSS.active}`} to={'/'}>Home</Link></li>

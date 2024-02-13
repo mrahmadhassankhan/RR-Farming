@@ -93,12 +93,12 @@ ul {
     background: #3B5998;
 }
 
-.twitter-bg {
-    background: #55ACEE;
+.instagram-bg{
+    background: linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7);
 }
 
-.google-bg {
-    background: #DD4B39;
+.youtube-bg {
+    background: #FF0000;
 }
 
 .footer-widget-heading h3 {

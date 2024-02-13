@@ -32,14 +32,15 @@ const AboutUs = () => {
                   </div>
                   <div className={CSS['aboutus-details']}>
                     <p>
-                      Welcome to RabbitDelight – your premium destination for exquisite rabbit meat. We take pride in sourcing the finest, ethically raised rabbits to deliver a delectable and healthy culinary experience to your table.
+                      Welcome to RR-Farming – your premier destination for high-quality rabbit, rabbit meat, organic chicken meat, and farm-fresh chicken eggs. We take pride in providing you with exceptional products sourced directly from our ethical and sustainable farming practices.
                     </p>
                     <p>
-                      At RabbitDelight, we are committed to excellence, ensuring every purchase supports ethical and humane farming practices. Our focus on quality and sustainability guarantees that you receive the best-tasting, lean rabbit meat conveniently at your doorstep.
+                      At RR-Farming, we are dedicated to excellence, ensuring every purchase supports humane farming practices and the highest standards of quality. Our commitment to ethical and sustainable agriculture guarantees that you receive the freshest and healthiest rabbit meat, organic chicken meat, and chicken eggs delivered right to your doorstep.
                     </p>
                     <p>
-                      Explore our selection of carefully curated rabbit cuts and products online. Join us in redefining your culinary journey with RabbitDelight – where excellence meets exceptional flavor.
+                      Explore our thoughtfully curated selection of rabbit cuts, rabbit meat, organic chicken meat, and farm-fresh chicken eggs online. Join us in transforming your culinary experience with RR-Farming – where premium quality meets exceptional flavor.
                     </p>
+
                   </div>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import './Footer.css'
 import { Link } from 'react-router-dom'
+import RR_logo from '../../images/RR192.png'
 
 
 export default function Footer() {
@@ -14,7 +15,7 @@ export default function Footer() {
                                 <i className="fa-solid fa-location-dot"></i>
                                 <div className="cta-text">
                                     <h4>Find us</h4>
-                                    <span>Shop No 123, Block C, Joahr Twon, Lahore</span>
+                                    <span>DHA phase 9, Lahore, Pakistan</span>
                                 </div>
                             </div>
                         </div>
@@ -23,7 +24,7 @@ export default function Footer() {
                                 <i className="fas fa-phone"></i>
                                 <div className="cta-text">
                                     <h4>Call us</h4>
-                                    <span>+923245521001</span>
+                                    <span>+923008169527</span>
                                 </div>
                             </div>
                         </div>
@@ -32,7 +33,7 @@ export default function Footer() {
                                 <i className="far fa-envelope-open"></i>
                                 <div className="cta-text">
                                     <h4>Mail us</h4>
-                                    <span>abubakarnangri@gmail.com</span>
+                                    <span>muhammedrehan622@gmail.com</span>
                                 </div>
                             </div>
                         </div>
@@ -43,18 +44,18 @@ export default function Footer() {
                         <div className="col-xl-4 col-lg-4 mb-50">
                             <div className="footer-widget">
                                 <div className="footer-logo">
-                                    <Link to={'/'}><img src="https://i.ibb.co/QDy827D/ak-logo.png" className="img-fluid" alt="logo" /></Link>
+                                    <Link to={'/'}><img src={RR_logo} className="img-fluid" alt="logo" /></Link>
                                 </div>
                                 <div className="footer-text">
-                                    <p>Welcome to BunnyBites - where go-to for cute companions and gourmet rabbit meat. Find joy in furry friendships
-                                        and elevate your culinary adventures with our premium selection. Delight awaits at BunnyBites! 🐇🍴
+                                    <p>Welcome to RR-Farming - where go-to for cute companions and gourmet rabbit meat. Find joy in furry friendships
+                                        and elevate your culinary adventures with our premium selection. Delight awaits at RR-Farming! 🐇🍴
                                     </p>
                                 </div>
                                 <div className="footer-social-icon">
                                     <span>Follow us</span>
-                                    <Link to="facebook.com"><i className="fab fa-facebook-f facebook-bg"></i></Link>
-                                    <Link to="twitter.com"><i className="fab fa-twitter twitter-bg"></i></Link>
-                                    <Link to="google.com"><i className="fab fa-google-plus-g google-bg"></i></Link>
+                                    <Link to="https://www.facebook.com/rehanishaqrabbitfarmingofficial?mibextid=2JQ9oc" target="_blank"><i className="fab fa-facebook-f facebook-bg"></i></Link>
+                                    <Link to="https://www.instagram.com/rohanrehanfarming?igsh=aHV3b2Y5bnB2d3l2" target="_blank"><i className="fa-brands fa-instagram instagram-bg"></i></Link>
+                                    <Link to="https://youtube.com/@rrfarming2020?si=ZWgLdwKOJUuBbfbG" target="_blank"><i className="fa-brands fa-youtube youtube-bg"></i></Link>
                                 </div>
                             </div>
                         </div>
