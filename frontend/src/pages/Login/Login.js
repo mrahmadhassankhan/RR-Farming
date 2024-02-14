@@ -4,13 +4,20 @@ import emailImage from '../../images/email.png';
 import personImage from '../../images/person.png';
 import passwordImage from '../../images/password.png';
 import CSS from './Login.module.css';
+import ForgetPassword from '../ForgetPassword/ForgetPassword';
 
 const Login = () => {
   const [action, setAction] = useState('Login');
   const [name, setName] = useState('');
   const [emailInput, setEmailInput] = useState('');
   const [password, setPassword] = useState('');
-  const [checkvalidation, setCheckValidation] = useState(false);
+  const [showforgetPopup, setShowLoginPopup] = useState(false);
+
+
+  const toggleforgetPopup = () => {
+    setShowLoginPopup(!showforgetPopup);
+  };
+
 
   const isEmailValid = (email) => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -89,19 +96,29 @@ const Login = () => {
       {action === 'Sign Up' ? null : (
         <div className={CSS['forget-password']}>
           Forget Password?{' '}
-          <Link className={CSS['forget-password-link']} to='/forget-password'>
-            <span>Click here!</span>
+          <Link className={CSS['forget-password-link']} >
+            <span onClick={toggleforgetPopup}>Click here!</span>
           </Link>
         </div>
       )}
+
       <div className={CSS['submit-container']}>
-        <button type='submit'  className={action === 'Sign Up' ? `${CSS['submit']} ${CSS['gray']}` : `${CSS['submit']}`}  onClick={handleLogin}>
+        <button type='submit' className={action === 'Sign Up' ? `${CSS['submit']} ${CSS['gray']}` : `${CSS['submit']}`} onClick={handleLogin}>
           Login
         </button>
-        <button type='submit'  className={action === 'Login' ? `${CSS['submit']} ${CSS['gray']}` : `${CSS['submit']}`}  onClick={handleSignUp} >
+        <button type='submit' className={action === 'Login' ? `${CSS['submit']} ${CSS['gray']}` : `${CSS['submit']}`} onClick={handleSignUp} >
           Sign Up
         </button>
       </div>
+      {showforgetPopup && (
+            <div className={CSS.login_popup}>
+              <ForgetPassword />
+              <div className={CSS.close_popup} onClick={toggleforgetPopup}>
+                <span className={CSS.close_popup_btn}>&times;</span>
+              </div>
+            </div>
+          )}
+
     </div>
   );
 };

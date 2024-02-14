@@ -11,7 +11,7 @@
 }
 
 .text {
-    color: var(--primary-color);
+    color: var(--white-color);
     font-size: 4vw;
     font-weight: 700;
     padding: 20px;
@@ -32,16 +32,16 @@
     display: flex;
     align-items: center;
     width: 160px;
-    max-width:480px;
-    height: 12vw; /* Responsive height */
+    max-width: 480px;
+    height: 12vw;
     background-color: var(--white-color);
     border-radius: 6px;
     margin: 0 auto;
-    padding: 0 3%; /* Responsive padding */
+    padding: 0 3%;
 }
 
 .inputs img {
-    margin-right: 5%; /* Responsive margin */
+    margin-right: 5%;
 }
 
 .inputs input {
@@ -55,10 +55,15 @@
     font-weight: 500;
 }
 
+.inputs input::placeholder{
+    font-weight: normal;
+}
+
+
 .forget-password {
     margin-top: 2%;
     color: var(--white-color);
-    font-size: 1.1rem; /* Responsive font size */
+    font-size: 1.1rem;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -73,7 +78,7 @@
 .forget-password span {
     color: var(--primary-color);
     cursor: pointer;
-    padding-left: 6px; /* Responsive padding */
+    padding-left: 6px;
 }
 
 .submit-container {
@@ -97,7 +102,7 @@
     font-weight: 700;
     cursor: pointer;
     padding: 1% 2%;
-    margin:12px auto;
+    margin: 12px auto;
     border: none;
 }
 
@@ -106,14 +111,13 @@
     color: var(--card-color);
 }
 
-/* Media Query for Laptop/Desktop */
 @media screen and (min-width: 768px) {
     .containera {
         max-width: 400px;
     }
 
     .text {
-        font-size: 1.9rem; /* Reset font size for larger screens */
+        font-size: 1.9rem;
     }
 
     .allinputs {
@@ -144,17 +148,22 @@
         font-size: 20px;
         padding: 9px;
     }
+    .login_popup {
+        width: 90%;
+    }
 }
 
-@media (max-width:550px){
+@media (max-width:550px) {
     .inputs {
         width: 90%;
         padding: 0 3%;
         margin: 5px 0;
     }
-    .text{
+
+    .text {
         font-size: 1.5rem;
     }
+
     .submit {
         flex-grow: 0;
         width: 8rem;
@@ -164,9 +173,39 @@
         margin: 10px auto;
         border-radius: 6px;
     }
+
     .forget-password {
         margin-top: 0px;
         margin-right: 8px;
         font-size: 1rem;
     }
+
+    .login_popup {
+        width: 90%;
+    }
+
+}
+
+.login_popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #504a4a;
+    padding: 0px;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+.close_popup {
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+.close_popup_btn {
+    font-size: 2rem;
+    color: var(--primary-color);
 }
