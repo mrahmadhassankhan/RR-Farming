@@ -65,7 +65,7 @@ const TrendingProduct = () => {
       </div>
       {trendingproduct.map((item,index) => (
         <TrendingCard
-          key={trendingproduct._id}
+          key={index}
           item={item}
         />
       ))}
