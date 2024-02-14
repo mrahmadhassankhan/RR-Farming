@@ -131,3 +131,37 @@
     margin: 0px;
   }
 }
+
+.login_popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #504a4a;
+  padding: 0px;
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+.close_popup {
+  position: absolute;
+  top: 5px;
+  right: 25px;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.close_popup_btn{
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.cart-login-container{
+  display: flex;
+}
+
+@media (max-width:550px){
+  .login_popup{
+    width:85%;
+  }
+} 

@@ -1,29 +1,109 @@
-import React, { useEffect, useState } from 'react'
-import Loader from '../Loader/Loader'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import emailImage from '../../images/email.png';
+import personImage from '../../images/person.png';
+import passwordImage from '../../images/password.png';
+import CSS from './Login.module.css';
 
 const Login = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    const fetchData = async () => {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 1000);
-    };
+  const [action, setAction] = useState('Login');
+  const [name, setName] = useState('');
+  const [emailInput, setEmailInput] = useState('');
+  const [password, setPassword] = useState('');
+  const [checkvalidation, setCheckValidation] = useState(false);
 
-    fetchData();
-  }, []);
+  const isEmailValid = (email) => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+  };
+  const isNameValid = (name) => {
+    const emailRegex = /^[a-zA-Z\s]+$/;
+    return emailRegex.test(name);
+  };
+  const isPasswordValid = (password) => {
+    const emailRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[a-zA-Z\d@$!%*?&]{8,}$/;
+    return emailRegex.test(password);
+  };
+
+  const handleSignUp = (e) => {
+    setAction("Sign Up")
+    e.preventDefault();
+    if (!isNameValid(name) && action !== "Login") {
+      alert("Please enter correct name.");
+      return false;
+    }
+
+    if (!isEmailValid(emailInput) && action !== "Login") {
+      alert("Please enter a valid email address.");
+      return false;
+    }
+    if (!isPasswordValid(password) && action !== "Login") {
+      alert("Please enter strong password which includes special characters.");
+      return false;
+    }
+
+    setName("");
+    setEmailInput("");
+    setPassword("")
+
+  };
+
+  const handleLogin = (e) => {
+    setAction("Login")
+    e.preventDefault();
+    if (!isEmailValid(emailInput) && action !== "Sign Up") {
+      alert("Please enter a valid email address.");
+      return false;
+    }
+    if (!isPasswordValid(password) && action !== "Sign Up") {
+      alert("Please enter your correct password.");
+      return false;
+    }
+
+    setEmailInput("");
+    setPassword("");
+
+  };
+
   return (
-    <div>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <div>
-          Login
+    <div className={CSS['containera']}>
+      <div className={CSS['header']}>
+        <div className={CSS['text']}>{action}</div>
+      </div>
+      <div className={CSS['allinputs']}>
+        {action === 'Login' ? null : (
+          <div className={CSS['inputs']}>
+            <img width={'20px'} height={'20px'} src={personImage} alt='' />
+            <input required type='text' placeholder='Name' value={name} onChange={isNameValid} />
+          </div>
+        )}
+        <div className={CSS['inputs']}>
+          <img width={'20px'} height={'15px'} src={emailImage} alt='' />
+          <input required type='email' placeholder='Email' value={emailInput} onChange={isEmailValid} />
+        </div>
+        <div className={CSS['inputs']}>
+          <img width={'20px'} height={'20px'} src={passwordImage} alt='' />
+          <input required type='password' placeholder='Password' value={password} onChange={isPasswordValid} />
+        </div>
+      </div>
+      {action === 'Sign Up' ? null : (
+        <div className={CSS['forget-password']}>
+          Forget Password?{' '}
+          <Link className={CSS['forget-password-link']} to='/forget-password'>
+            <span>Click here!</span>
+          </Link>
         </div>
       )}
+      <div className={CSS['submit-container']}>
+        <button type='submit'  className={action === 'Sign Up' ? `${CSS['submit']} ${CSS['gray']}` : `${CSS['submit']}`}  onClick={handleLogin}>
+          Login
+        </button>
+        <button type='submit'  className={action === 'Login' ? `${CSS['submit']} ${CSS['gray']}` : `${CSS['submit']}`}  onClick={handleSignUp} >
+          Sign Up
+        </button>
+      </div>
     </div>
+  );
+};
 
-  )
-}
-
-export default Login
+export default Login;
