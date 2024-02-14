@@ -1,14 +1,13 @@
-import React, { useState } from "react";
-import CSS from "./TrendingCard.module.css";
-import { Link } from "react-router-dom";
+import React,{useState} from 'react'
+import CSS from './CategoryCard.module.css'
+import { Link } from 'react-router-dom';
 
-const TrendingCard = ({ item }) => {
-  const [dilIcon, setDilIcon] = useState(false);
+const CategoryCard = ({item}) => {
+    const [dilIcon, setDilIcon] = useState(false);
 
-  const handleDilIcon = () => {
-    setDilIcon(!dilIcon);
-  };
-
+    const handleDilIcon = () => {
+      setDilIcon(!dilIcon);
+    };
   return (
     <div className={CSS["wrapper-grid"]}>
       <div className={CSS["card-container"]}>
@@ -22,7 +21,7 @@ const TrendingCard = ({ item }) => {
             to={"/addtocart"}
             className={`${CSS["button-container"]} button-container`}
           >
-            <button className={CSS["button"]}>Shop Now</button>
+            <button className={CSS["button"]}>Buy</button>
           </Link>
         </div>
         <div className={CSS["card-data-container"]}>
@@ -42,7 +41,7 @@ const TrendingCard = ({ item }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TrendingCard;
+export default CategoryCard

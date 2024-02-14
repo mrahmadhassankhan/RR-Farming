@@ -29,7 +29,7 @@ const CategorySection = () => {
             <h3 className={CSS['category-title']}>Categories</h3>
             {CategoryArray.map((category, index) => (
                 <div key={index} className={CSS['category-container']}>
-                    <Link className={CSS['category-link']} to={`/category/${index}`} key={index}>
+                    <Link className={CSS['category-link']} to={`/category`} key={index}>
                         <div className={CSS['category-data']} key={index}>
                             <h6 className={CSS['category-subtitle']}>{category.title}</h6>
                             <img className={CSS['category-img']} src={category.img} alt={category.title} />
