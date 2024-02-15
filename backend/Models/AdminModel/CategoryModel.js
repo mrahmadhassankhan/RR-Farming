@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 const categorySchema = mongoose.Schema({
-  categoryname: {
+  categoryName: {
     type: String,
     required: true,
   },
-  categoryimage: {
+  categoryImage: {
     type: String,
     required: true,
-  }
+  },
 });
 
 const CategoryModel = mongoose.model(

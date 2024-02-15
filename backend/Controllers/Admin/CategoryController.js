@@ -2,11 +2,11 @@ const AsyncHandler = require("express-async-handler");
 const CategoryModel = require("../../Models/AdminModel/CategoryModel");
 
 const postcategory = AsyncHandler(async (req, res) => {
-  const { categoryName,categoryImage } = req.body;
+  const { categoryName, categoryImage } = req.body;
   try {
-    const existingProduct = await CategoryModel.findOne({ categoryname });
+    const existingProduct = await CategoryModel.findOne({ categoryName });
     if (existingProduct) {
-      return res.status(400).json("Product Already Exists");
+      return res.status(400).json("Category Already Exists");
     }
 
     await CategoryModel.create({
@@ -14,10 +14,10 @@ const postcategory = AsyncHandler(async (req, res) => {
       categoryImage
     });
 
-    res.status(201).json("Successfully Added Trending Product");
+    res.status(201).json("Successfully Added Category Product");
   } catch (error) {
-    console.error("Error adding trending product:", error);
-    res.status(500).json("Error adding trending product");
+    console.error("Error adding category:", error);
+    res.status(500).json("Error adding category");
   }
 });
 
