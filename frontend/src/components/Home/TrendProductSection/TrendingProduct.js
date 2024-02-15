@@ -12,10 +12,9 @@ const TrendingProduct = () => {
   // const [trendingproducts, setTrendingProducts] = useState([]);
   // useEffect(() => {
   //   axios
-  //     .get("http://localhost:3000/api/gettrendingproducts")
+  //     .get("http://localhost:1783/api/gettrendingproducts")
   //     .then((res) => {
   //       console.log(res.data);
-
   //       setTrendingProducts(res.data);
   //     })
   //     .catch((err) => console.error(err));

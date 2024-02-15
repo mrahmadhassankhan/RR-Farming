@@ -7,7 +7,7 @@ const {
   errorHandler,
   notFound,
 } = require("../backend/middlewares/errorMiddleware");
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 1783;
 
 app.use(
   cors({

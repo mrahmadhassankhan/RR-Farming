@@ -56,7 +56,7 @@ const CategoryFilterCard = (props) => {
             </div>
             <ul className={CSS['category-list']}>
                 {Category.map((value, index) => (
-                    <li className={CSS['category-list-item']}><input onClick={handleCategoryFilter} className={CSS['category-list-item-checkbox']} key={index} type='radio' value={value.title} name={'filter-value'} />{value.title}</li>
+                    <li key={index}  className={CSS['category-list-item']}><input onClick={handleCategoryFilter} className={CSS['category-list-item-checkbox']} key={index} type='radio' value={value.title} name={'filter-value'} />{value.title}</li>
                 ))}
             </ul>
             <div className={CSS['category-title']}>
@@ -64,7 +64,7 @@ const CategoryFilterCard = (props) => {
             </div>
             <ul className={CSS['category-list']}>
                 {Price.map((value, index) => (
-                    <li className={CSS['category-list-item']}><input onClick={handlePriceFilter} className={CSS['category-list-item-checkbox']} key={index} type='radio' value={value.title} name={'filter-price'} />{value.title}</li>
+                    <li key={index}  className={CSS['category-list-item']}><input onClick={handlePriceFilter} className={CSS['category-list-item-checkbox']} key={index} type='radio' value={value.title} name={'filter-price'} />{value.title}</li>
                 ))}
             </ul>
         </div>
