@@ -36,8 +36,8 @@ const TrendingCard = ({ item }) => {
             ></i>
           </div>
           <div className={CSS["card-data-inner-container2"]}>
-            <p className={CSS["new-price"]}>${item.newPrice}</p>
-            <del className={CSS["old-price"]}>${item.oldPrice}</del>
+            <p className={CSS["new-price"]}>Rs. {item.newPrice}</p>
+            <del className={CSS["old-price"]}>Rs. {item.oldPrice}</del>
           </div>
         </div>
       </div>

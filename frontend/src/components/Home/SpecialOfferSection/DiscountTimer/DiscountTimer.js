@@ -10,9 +10,6 @@ const DiscountTimer = () => {
     const countdown = setInterval(() => {
       if (hours === 0 && minutes === 0 && seconds === 0) {
         clearInterval(countdown);
-        // Handle the logic when the timer reaches 0
-        // For example, you can display a message or trigger an action
-        console.log('Timer expired!');
       } else {
         if (minutes === 0 && seconds === 0) {
           setHours((prevHours) => prevHours - 1);

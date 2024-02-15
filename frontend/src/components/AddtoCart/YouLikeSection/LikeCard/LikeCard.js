@@ -17,7 +17,7 @@ const LikeCard = ({item}) => {
                 <p className={CSS['like-card-title']}>{item.title}</p>
                 <i onClick={handleDilIcon} className={`${CSS['like-card-icon']} ${dilIcon ? 'fa-solid fa-heart' : 'fa-regular fa-heart'}`}></i>
             </div>
-            <p className={CSS['like-card-price']}>${item.price}</p>
+            <p className={CSS['like-card-price']}>Rs. {item.price}</p>
         </div>
     </div>
   )

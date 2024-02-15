@@ -27,7 +27,7 @@ const CheckOutCard = ({CartItem,onRemove }) => {
                 </div>
                 <div className={CSS['cart-detail']}>
                    <h3 className={CSS['cart-title']}>{CartItem.title}</h3>
-                   <h5 className={CSS['cart-price']}>${CartItem.price}</h5>
+                   <h5 className={CSS['cart-price']}>Rs. {CartItem.price}</h5>
                 </div>
             </div>
             <div className={CSS['cart-quantity-container']} >

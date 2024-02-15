@@ -81,16 +81,16 @@ const Login = () => {
         {action === 'Login' ? null : (
           <div className={CSS['inputs']}>
             <img width={'20px'} height={'20px'} src={personImage} alt='' />
-            <input required type='text' placeholder='Name' value={name} onChange={isNameValid} />
+            <input required type='text' placeholder='Name' value={name} onChange={(e)=>{setName(e.target.value)}} />
           </div>
         )}
         <div className={CSS['inputs']}>
           <img width={'20px'} height={'15px'} src={emailImage} alt='' />
-          <input required type='email' placeholder='Email' value={emailInput} onChange={isEmailValid} />
+          <input required type='email' placeholder='Email' value={emailInput} onChange={(e)=>{setEmailInput(e.target.value)}} />
         </div>
         <div className={CSS['inputs']}>
           <img width={'20px'} height={'20px'} src={passwordImage} alt='' />
-          <input required type='password' placeholder='Password' value={password} onChange={isPasswordValid} />
+          <input required type='password' placeholder='Password' value={password} onChange={(e)=>{setPassword(e.target.value)}} />
         </div>
       </div>
       {action === 'Sign Up' ? null : (
