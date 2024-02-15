@@ -3,6 +3,7 @@ const CategoryModel = require("../../Models/AdminModel/CategoryModel");
 
 const postcategory = AsyncHandler(async (req, res) => {
   const { categoryName, categoryImage } = req.body;
+  console.log(categoryName, categoryImage)
   try {
     const existingProduct = await CategoryModel.findOne({ categoryName });
     if (existingProduct) {
