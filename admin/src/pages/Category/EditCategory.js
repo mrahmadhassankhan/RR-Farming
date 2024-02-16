@@ -5,7 +5,7 @@ import GridLayout from '../../components/GridLayout'
 const EditCategory = () => {
   return (
     <GridLayout>
-      <h1 className={CSS['addcategory-title']}>Edit your Category</h1>
+      <h1 className={CSS['addcategory-title']}>Edit your Category</h1> 
     </GridLayout>
   )
 }

@@ -15,7 +15,6 @@ const CategorySection = () => {
         axios
             .get("http://localhost:1783/api/getcategory")
             .then((res) => {
-                console.log(res.data);
                 setCategories(res.data);
             })
             .catch((err) => console.error(err));

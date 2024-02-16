@@ -8,7 +8,6 @@ const CategoryFilterCard = (props) => {
         axios
             .get("http://localhost:1783/api/getcategory")
             .then((res) => {
-                console.log(res.data);
                 setCategories(res.data);
             })
             .catch((err) => console.error(err));
@@ -57,7 +56,7 @@ const CategoryFilterCard = (props) => {
                 Categories
             </div>
             <ul className={CSS['category-list']}>
-                {Category.map((value, index) => (
+                {Category.map((value) => (
                     <li key={value._id}  className={CSS['category-list-item']}><input onClick={handleCategoryFilter} className={CSS['category-list-item-checkbox']} key={value._id} type='radio' value={value.categoryName} name={'filter-value'} />{value.categoryName}</li>
                 ))}
             </ul>
