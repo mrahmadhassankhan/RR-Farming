@@ -5,7 +5,7 @@ import CSS from './DeleteProduct.module.css'
 const DeleteProduct = () => {
     return (
         <GridLayout>
-            DeleteProduct
+            <h1 className={CSS['addproduct-title']}>Delete your Product</h1>
         </GridLayout>
     )
 }

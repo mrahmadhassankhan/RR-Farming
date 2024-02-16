@@ -5,7 +5,7 @@ import GridLayout from '../../components/GridLayout'
 const DeleteCategory = () => {
   return (
     <GridLayout>
-        deletecategory
+      <h1 className={CSS['addcategory-title']}>Delete your Category</h1>
     </GridLayout>
   )
 }

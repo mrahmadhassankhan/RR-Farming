@@ -5,7 +5,7 @@ import GridLayout from '../../components/GridLayout'
 const UpdateCategory = () => {
   return (
     <GridLayout>
-        UpdateCategory
+      <h1 className={CSS['addcategory-title']}>Update your Category</h1>
     </GridLayout>
   )
 }
