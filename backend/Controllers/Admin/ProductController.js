@@ -6,7 +6,6 @@ const postproduct = AsyncHandler(async (req, res) => {
     try {
         const existingProduct = await ProductModel.findOne({ productName });
         if (existingProduct) {
-
             return res.status(400).json("Product Already Exists");
         }
 

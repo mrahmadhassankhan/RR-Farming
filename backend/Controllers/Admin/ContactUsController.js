@@ -3,7 +3,6 @@ const ContactUsModel = require("../../Models/AdminModel/ContactUsModel");
 
 const postcontactus = AsyncHandler(async (req, res) => {
     const { name, email, subject, message, } = req.body;
-    console.log(name, email, subject, message,)
     try {
         const existingCategory = await ContactUsModel.findOne({ email });
         if (existingCategory) {
