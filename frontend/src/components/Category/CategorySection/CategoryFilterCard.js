@@ -1,20 +1,22 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import CSS from './CategoryFilterCard.module.css'
+import axios from 'axios'
 
 const CategoryFilterCard = (props) => {
+    const [categories, setCategories] = useState([]);
+    useEffect(() => {
+        axios
+            .get("http://localhost:1783/api/getcategory")
+            .then((res) => {
+                console.log(res.data);
+                setCategories(res.data);
+            })
+            .catch((err) => console.error(err));
+    }, []);
+
     const Category = [{
-        title: "All"
-    }, {
-        title: "Rabbit Meat"
-    }, {
-        title: "Rabbit"
-    }, {
-        title: "Chicken"
-    }, {
-        title: "Chicken Meat"
-    }, {
-        title: "Chicken Eggs"
-    },]
+        categoryName: "All"
+    },...categories]
 
     const Price = [{
         title: "$0 - $50",
@@ -56,7 +58,7 @@ const CategoryFilterCard = (props) => {
             </div>
             <ul className={CSS['category-list']}>
                 {Category.map((value, index) => (
-                    <li key={index}  className={CSS['category-list-item']}><input onClick={handleCategoryFilter} className={CSS['category-list-item-checkbox']} key={index} type='radio' value={value.title} name={'filter-value'} />{value.title}</li>
+                    <li key={value._id}  className={CSS['category-list-item']}><input onClick={handleCategoryFilter} className={CSS['category-list-item-checkbox']} key={value._id} type='radio' value={value.categoryName} name={'filter-value'} />{value.categoryName}</li>
                 ))}
             </ul>
             <div className={CSS['category-title']}>

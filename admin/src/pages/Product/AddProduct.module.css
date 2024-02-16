@@ -14,7 +14,8 @@
 .product-selectimg-div,
 .product-new-price-div,
 .product-old-name-div,
-.product-product-name-div {
+.product-product-name-div,
+.product-quantity-div {
     display: inline-block;
     display: flex;
     justify-content: flex-start;
@@ -27,7 +28,8 @@
 .product-selectimg-div label,
 .product-new-price-div label,
 .product-old-name-div label,
-.product-product-name-div label {
+.product-product-name-div label ,
+.product-quantity-div label{
     text-align: left;
     color: var(--white-color);
     font-weight: 400;
@@ -38,7 +40,8 @@
 .product-name-div input,
 .product-new-price-div input,
 .product-old-name-div input,
-.product-product-name-div input {
+.product-product-name-div input,
+.product-quantity-div input {
     margin: 0px 0px 0px 60px;
     height: 50px;
     font-size: 1.2rem;

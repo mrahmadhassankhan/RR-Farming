@@ -5,8 +5,8 @@ const postcategory = AsyncHandler(async (req, res) => {
   const { categoryName, categoryImage } = req.body;
   console.log(categoryName, categoryImage)
   try {
-    const existingProduct = await CategoryModel.findOne({ categoryName });
-    if (existingProduct) {
+    const existingCategory = await CategoryModel.findOne({ categoryName });
+    if (existingCategory) {
       return res.status(400).json("Category Already Exists");
     }
 

@@ -9,7 +9,7 @@ const CategoryProductCard = ({ItemList}) => {
       <div className={CSS['category-title']}>Items</div>
       {ItemList.map((item,index) => (
         <CategoryCard
-          key={index}
+          key={item._id}
           item={item}
         />
       ))}

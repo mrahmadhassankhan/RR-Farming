@@ -5,7 +5,8 @@ import axios from "axios";
 
 const AddCategory = () => {
   const [categoryName, setCategoryName] = useState('');
-  const [categoryImage, setCategoryImage] = useState(null);
+  // const [categoryImage, setCategoryImage] = useState(null);
+  const [categoryImage, setCategoryImage] = useState("null");
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -25,11 +26,10 @@ const AddCategory = () => {
 
   const handleAddCategory = (e) => {
     e.preventDefault();
-  
     axios
-      .post("http://localhost:1783/api/postcategory", {
-        categoryName,
-        categoryImage
+    .post("http://localhost:1783/api/postcategory", {
+      categoryName,
+      categoryImage
       })
       .then((res) => {
         console.log(res.data);

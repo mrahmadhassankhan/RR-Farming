@@ -1,19 +1,13 @@
 const express = require("express");
 const { Login, Register } = require("../Controllers/userController");
-const {
-  trendingProduct,
-  getTredingProducts,
-} = require("../Controllers/trendingProductController");
 
 const {postcategory,getCategories} =require('../Controllers/Admin/CategoryController')
+const {postproduct ,getproduct} = require('../Controllers/Admin/ProductController')
 
 const router = express.Router();
 
 router.route("/login").post(Login);
 router.route("/register").post(Register);
-router.route("/trendingproduct").post(trendingProduct);
-router.route("/gettrendingproducts").get(getTredingProducts);
-
 
 
 
@@ -21,5 +15,7 @@ router.route("/gettrendingproducts").get(getTredingProducts);
 router.route("/postcategory").post(postcategory);
 router.route("/getcategory").get(getCategories);
 
+router.route("/postproduct").post(postproduct);
+router.route("/getproduct").get(getproduct);
 
 module.exports = router;

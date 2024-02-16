@@ -14,8 +14,8 @@ const CategoryCard = ({item}) => {
         <div className={CSS["card-img"]}>
           <img
             className={CSS["img"]}
-            src={item.img}
-            alt={item.title}
+            src={item.productImage}
+            alt={item.productName}
           />
           <Link
             to={"/addtocart"}
@@ -26,7 +26,7 @@ const CategoryCard = ({item}) => {
         </div>
         <div className={CSS["card-data-container"]}>
           <div className={CSS["card-data-inner-container1"]}>
-            <p className={CSS["card-title"]}>{item.title}</p>
+            <p className={CSS["card-title"]}>{item.productName}</p>
             <i
               onClick={handleDilIcon}
               className={`${CSS["card-icon"]} ${
