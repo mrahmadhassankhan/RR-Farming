@@ -4,6 +4,7 @@ import Footer from '../../components/Footer/Footer'
 import CSS from './Contact.module.css'
 import img from '../../images/contact.png'
 import Loader from '../Loader/Loader'
+import axios from 'axios'
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -26,9 +27,21 @@ const Contact = () => {
   }
 
 
-  const handleFromEmail = (e) => {
+  const handleFromEmail = async (e) => {
     e.preventDefault();
-    console.log(email, name, message, subject);
+    alert("name, email, subject, message,")
+    await axios
+      .post("http://localhost:1783/api/postcontactus", {
+        name, email, subject, message, 
+      })
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => console.error(err));
+    setEmail('');
+    setName('');
+    setMessage('');
+    setSubject('')
   }
 
 
