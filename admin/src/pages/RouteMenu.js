@@ -1,25 +1,21 @@
 import React from 'react'
-import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import DashBoard from './DashBoard/DashBoard'
 import AddCategory from './Category/AddCategory'
-import DeleteCategory from './Category/DeleteCategory'
-import UpdateCategory from './Category/UpdateCategory'
+import EditCategory from './Category/EditCategory'
 import AddProduct from './Product/AddProduct'
-import DeleteProduct from './Product/DeleteProduct'
-import UpdateProduct from './Product/UpdateProduct'
+import EditProduct from './Product/EditProduct'
 
 const RouteMenu = () => {
   return (
     <Router>
-        <Routes>
-            <Route path='/' element={<DashBoard/>}/>
-            <Route path='/addcategory' element={<AddCategory/>}/>
-            <Route path='/deletecategory' element={<DeleteCategory/>}/>
-            <Route path='/updatecategory' element={<UpdateCategory/>}/>
-            <Route path='/addproduct' element={<AddProduct/>}/>
-            <Route path='/deleteproduct' element={<DeleteProduct/>}/>
-            <Route path='/updateproduct' element={<UpdateProduct/>}/>
-        </Routes>
+      <Routes>
+        <Route path='/' element={<DashBoard />} />
+        <Route path='/addcategory' element={<AddCategory />} />
+        <Route path='/editcategory' element={<EditCategory />} />
+        <Route path='/addproduct' element={<AddProduct />} />
+        <Route path='/editproduct' element={<EditProduct />} />
+      </Routes>
     </Router>
   )
 }
