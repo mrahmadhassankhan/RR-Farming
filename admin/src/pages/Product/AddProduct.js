@@ -6,40 +6,28 @@ import axios from 'axios'
 const AddProduct = () => {
   const [categoryName, setCategoryName] = useState('');
   const [productName, setProductName] = useState('');
-  const [productImage, setProductImage] = useState(null);
-  const [newPrice, setNewPrice] = useState(0);
-  const [oldPrice, setOldPrice] = useState(0);
-  const [quantity, setQuantity] = useState(0);
+  const [productImage, setProductImage] = useState("https://images.unsplash.com/photo-1480554840075-72cbdabbf689?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  const [newPrice, setNewPrice] = useState();
+  const [oldPrice, setOldPrice] = useState();
+  const [quantity, setQuantity] = useState();
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
 
     if (file) {
-      // Use FileReader to read the selected image
       const reader = new FileReader();
-
       reader.onloadend = () => {
-        // Set the productImage state with the data URL of the selected image
-        setProductImage(reader.result);
+        setProductImage("https://images.unsplash.com/photo-1480554840075-72cbdabbf689?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
       };
 
       reader.readAsDataURL(file);
     }
   };
 
-  const handleAddProduct = (e) => {
-    e.preventDefault();
-    const AddCatogoryData = [{
-      category: categoryName,
-      title: productName,
-      newprice: newPrice,
-      oldprice: oldPrice,
-      productImg: productImage
-    }]
-
+  const handleAddProduct = async (e) => {
     e.preventDefault();
 
-    axios
+   await axios
       .post("http://localhost:1783/api/postproduct", {
         categoryName,
         productName,
@@ -50,9 +38,26 @@ const AddProduct = () => {
       })
       .then((res) => {
         console.log(res.data);
-        // Update state or perform other actions if needed
+        console.log( categoryName,
+          productName,
+          newPrice,
+          oldPrice,
+          quantity,
+          productImage)
       })
       .catch((err) => console.error(err));
+      console.log( categoryName,
+        productName,
+        newPrice,
+        oldPrice,
+        quantity,
+        productImage)
+      setCategoryName('');
+      setNewPrice('');
+      setOldPrice('');
+      setProductImage(null)
+      setQuantity('');
+      setProductName('')
   }
   return (
     <GridLayout>
@@ -77,7 +82,7 @@ const AddProduct = () => {
           </div>
           <div className={CSS['product-quantity-div']}>
             <label htmlFor='quantity'>Quantity</label>
-            <input min={0} required type='number' placeholder='Old Price' id='quantity' value={quantity} onChange={(e) => setQuantity(e.target.value)} />
+            <input min={0} required type='number' placeholder='Quantity' id='quantity' value={quantity} onChange={(e) => setQuantity(e.target.value)} />
           </div>
           <div className={CSS['product-selectimg-div']}>
             <label htmlFor='product-img'>Select Image</label>

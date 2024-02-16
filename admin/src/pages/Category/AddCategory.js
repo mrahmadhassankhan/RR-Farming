@@ -6,7 +6,7 @@ import axios from "axios";
 const AddCategory = () => {
   const [categoryName, setCategoryName] = useState('');
   // const [categoryImage, setCategoryImage] = useState(null);
-  const [categoryImage, setCategoryImage] = useState("null");
+  const [categoryImage, setCategoryImage] = useState(null);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -24,19 +24,21 @@ const AddCategory = () => {
     }
   };
 
-  const handleAddCategory = (e) => {
-    e.preventDefault();
-    axios
-    .post("http://localhost:1783/api/postcategory", {
-      categoryName,
-      categoryImage
-      })
-      .then((res) => {
-        console.log(res.data);
-        // Update state or perform other actions if needed
-      })
-      .catch((err) => console.error(err));
-  };
+const handleAddCategory = async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData();
+  formData.append('categoryName', categoryName);
+  formData.append('categoryImage', categoryImage);
+
+  try {
+    const res = await axios.post("http://localhost:1783/api/postcategory", formData);
+    console.log(res.data);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
   
   return (
     <GridLayout>

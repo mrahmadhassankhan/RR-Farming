@@ -19,24 +19,24 @@ const CategoryFilterCard = (props) => {
     },...categories]
 
     const Price = [{
-        title: "$0 - $50",
+        title: "Rs.0 - Rs.999",
         min:0,
-        max:50
+        max:999
     }, {
-        title: "$50 - $100",
-        min:50,
-        max:100
+        title: "Rs.1000 - Rs.1999",
+        min:1000,
+        max:1999
     }, {
-        title: "$150 - $200",
-        min:150,
-        max:200
+        title: "Rs.2000 - Rs.2999",
+        min:2000,
+        max:2999
     }, {
-        title: "$250 - $300",
-        min:250,
-        max:300
+        title: "Rs.3000 - Rs.3999",
+        min:3000,
+        max:3999
     }, {
-        title: "$300 - Above",
-        min:300,
+        title: "Rs.4000 - Above",
+        min:4000,
         max:50000
     }]
 
