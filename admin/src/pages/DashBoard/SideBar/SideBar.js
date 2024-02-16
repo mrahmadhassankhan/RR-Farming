@@ -21,6 +21,13 @@ const SideBar = () => {
                     <li><Link className={activelink.pathname === '/editproduct' ? `${CSS['active']} ${CSS['product-link']}` : `${CSS['category-link']}`} to={'/editproduct'}>Edit Products</Link></li>
                 </ul>
             </div>
+            <div>
+                <p className={CSS['product']}>Queries</p>
+                <ul className={CSS['product-list']}>
+                    <li><Link className={activelink.pathname === '/orders' ? `${CSS['active']} ${CSS['product-link']}` : `${CSS['category-link']}`} to={'/orders'}>Orders</Link></li>
+                    <li><Link className={activelink.pathname === '/userquery' ? `${CSS['active']} ${CSS['product-link']}` : `${CSS['category-link']}`} to={'/userquery'}>User Queries</Link></li>
+                </ul>
+            </div>
         </div>
     )
 }

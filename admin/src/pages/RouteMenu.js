@@ -5,6 +5,8 @@ import AddCategory from './Category/AddCategory'
 import EditCategory from './Category/EditCategory'
 import AddProduct from './Product/AddProduct'
 import EditProduct from './Product/EditProduct'
+import Orders from './Query/Orders'
+import UserQuery from './Query/UserQuery'
 
 const RouteMenu = () => {
   return (
@@ -15,6 +17,8 @@ const RouteMenu = () => {
         <Route path='/editcategory' element={<EditCategory />} />
         <Route path='/addproduct' element={<AddProduct />} />
         <Route path='/editproduct' element={<EditProduct />} />
+        <Route path='/orders' element={<Orders />} />
+        <Route path='/userquery' element={<UserQuery />} />
       </Routes>
     </Router>
   )
