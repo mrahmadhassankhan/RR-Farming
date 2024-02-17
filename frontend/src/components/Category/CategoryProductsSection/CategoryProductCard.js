@@ -8,10 +8,7 @@ const CategoryProductCard = ({ItemList}) => {
     <div>
       <div className={CSS['category-title']}>Items</div>
       {ItemList.map((item,index) => (
-        <CategoryCard
-          key={item._id}
-          item={item}
-        />
+        <CategoryCard key={item._id} item={item} />
       ))}
     </div>
   )

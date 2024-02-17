@@ -2,13 +2,13 @@ const AsyncHandler = require("express-async-handler");
 const ProductModel = require("../../Models/AdminModel/ProductModel");
 
 const postproduct = AsyncHandler(async (req, res) => {
-    const { categoryName,productName,newPrice, oldPrice,quantity,productImage } = req.body;
+    const { categoryName,productName,newPrice, oldPrice,quantity } = req.body;
     try {
         const existingProduct = await ProductModel.findOne({ productName });
         if (existingProduct) {
             return res.status(400).json("Product Already Exists");
         }
-
+        const productImage = req.file.filename;
         await ProductModel.create({
             categoryName,productName,newPrice, oldPrice,quantity,productImage
         });

@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const EditCategory = () => {
   const [categories, setCategories] = useState([]);
+  const [updateCategory,setUpdateCategory]=useState([]);
 
   useEffect(() => {
     fetchData();
@@ -21,8 +22,11 @@ const EditCategory = () => {
       .catch((err) => console.error(err));
   };
 
-  const handleEditCategory = (e) => {
-    e.preventDefault();
+
+  const handleEditCategory = (categoryId) => {
+    const categoryToUpdate = categories.find(category => category._id.includes(categoryId));
+    setUpdateCategory(categoryToUpdate);
+    console.log(updateCategory);
   };
 
   const handleDeleteCategory = (categoryId) => {
@@ -54,23 +58,15 @@ const EditCategory = () => {
             <tr key={list._id}>
               <td className={CSS['table-data']}>{list.categoryName}</td>
               <td className={CSS['table-data']}>
-                <img src={list.categoryImage} alt={list.categoryName} width={'80px'} height={'80px'} />
+                <img src={`http://localhost:1783/Images/${list.categoryImage}`} alt={list.categoryName} width={'80px'} height={'80px'} />
               </td>
               <td className={CSS['table-data']}>
-                <button
-                  className={CSS['table-data-edit-btn']}
-                  type='button'  // Change to type='button' to prevent form submission
-                  onClick={handleEditCategory}
-                >
+                <button  className={CSS['table-data-edit-btn']}  type='button'  onClick={()=>handleEditCategory(list._id)} >
                   Edit
                 </button>
               </td>
               <td className={CSS['table-data']}>
-                <button
-                  className={CSS['table-data-delete-btn']}
-                  type='button'  // Change to type='button' to prevent form submission
-                  onClick={() => handleDeleteCategory(list._id)}
-                >
+                <button className={CSS['table-data-delete-btn']}  type='button'  onClick={() => handleDeleteCategory(list._id)} >
                   Delete
                 </button>
               </td>

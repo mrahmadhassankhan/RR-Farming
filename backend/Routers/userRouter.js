@@ -4,6 +4,7 @@ const { Login, Register } = require("../Controllers/userController");
 const {postCategory,getCategories,deleteCategory} =require('../Controllers/Admin/CategoryController')
 const { postproduct, getproduct, deleteproduct } = require('../Controllers/Admin/ProductController')
 const { postcontactus, getcontactus, deletecontactus } = require('../Controllers/Admin/ContactUsController')
+const { categoryUploadMiddleware, productUploadMiddleware } = require("../middlewares/ImageMiddleware");
 
 const router = express.Router();
 
@@ -13,11 +14,11 @@ router.route("/register").post(Register);
 
 
 //admin routes
-router.route("/postcategory").post(postCategory);
+router.route("/postcategory").post(categoryUploadMiddleware,postCategory);
 router.route("/getcategory").get(getCategories);
 router.route("/deletecategory/:categoryId").delete(deleteCategory);
 
-router.route("/postproduct").post(postproduct);
+router.route("/postproduct").post(productUploadMiddleware,postproduct);
 router.route("/getproduct").get(getproduct);
 router.route("/deleteproduct/:productId").delete(deleteproduct);
 

@@ -3,13 +3,14 @@ const CategoryModel = require("../../Models/AdminModel/CategoryModel");
 const mongoose = require('mongoose');
 
 const postCategory = AsyncHandler(async (req, res) => {
-  const { categoryName, categoryImage } = req.body;
+  const { categoryName } = req.body;
   try {
     const existingCategory = await CategoryModel.findOne({ categoryName });
     if (existingCategory) {
       return res.status(400).json("Category Already Exists");
     }
 
+    const categoryImage = req.file.filename;
     await CategoryModel.create({
       categoryName,
       categoryImage

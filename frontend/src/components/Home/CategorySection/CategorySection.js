@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import CSS from './CategorySection.module.css'
 import { Link } from 'react-router-dom'
-import rabbit1 from '../../../images/rabbit1.jpg'
-import rabbit2 from '../../../images/rabbit2.jpg'
-import rabbit3 from '../../../images/rabbit3.jpg'
-import rabbitmeat1 from '../../../images/rabbitmeat1.jpg'
-import rabbitmeat2 from '../../../images/rabbitmeat2.jpg'
 import axios from "axios";
 
 const CategorySection = () => {
@@ -27,7 +22,7 @@ const CategorySection = () => {
                     <Link className={CSS['category-link']} to={`/category`} key={index}>
                         <div className={CSS['category-data']} key={index}>
                             <h6 className={CSS['category-subtitle']}>{category.categoryName}</h6>
-                            <img className={CSS['category-img']} src={category.categoryImage} alt={category.categoryName} />
+                            <img className={CSS['category-img']} src={`http://localhost:1783/Images/${category.categoryImage}`} alt={category.categoryName} />
                         </div>
                     </Link>
                 </div>

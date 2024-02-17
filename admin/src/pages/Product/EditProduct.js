@@ -6,11 +6,11 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 const EditProduct = () => {
-
+    const [products, setProducts] = useState([]);
+    const [updateProduct, setUpdateProduct] = useState([]);
     useEffect(() => {
         fetchData();
     }, [])
-    const [products, setProducts] = useState([]);
     const fetchData = () => {
         axios.get("http://localhost:1783/api/getproduct")
             .then((res) => { setProducts(res.data); })
@@ -18,7 +18,9 @@ const EditProduct = () => {
     }
 
     const handleEditProduct = (productId) => {
-
+        const productToUpdate = products.find(product => product._id.includes(productId));
+        setUpdateProduct(productToUpdate);
+        console.log(updateProduct);
     }
     const handleDeleteProduct = (productId) => {
         axios
@@ -55,7 +57,7 @@ const EditProduct = () => {
                             <td className={CSS['table-data']}>{product.newPrice}</td>
                             <td className={CSS['table-data']}>{product.oldPrice}</td>
                             <td className={CSS['table-data']}>{product.quantity}</td>
-                            <td className={CSS['table-data']}>{product.productImage}</td>
+                            <td className={CSS['table-data']}><img src={`http://localhost:1783/Images/${product.productImage}`} alt={product.productImage} width={'80px'} height={'80px'} /></td>
                             <td className={CSS['table-data']}>
                                 <button className={CSS['table-data-edit-btn']} type='button' onClick={() => handleEditProduct(product._id)}>Edit</button>
                             </td>
