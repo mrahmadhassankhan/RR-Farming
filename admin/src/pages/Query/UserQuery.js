@@ -28,14 +28,10 @@ const UserQuery = () => {
       .delete(`http://localhost:1783/api/deletecontactus/${queryId}`)
       .then((res) => {
         fetchData();
-        toast.success('Successfully Deleted Query', {
-          className: 'custom-toast-error',
-        });
+        toast.success('Successfully Deleted Query');
       })
       .catch((err) => {
-        toast.error('Error in Deleting Query', {
-          className: 'custom-toast-error',
-        });
+        toast.error('Error in Deleting Query');
       }
       );
   };

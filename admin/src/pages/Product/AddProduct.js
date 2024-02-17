@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import GridLayout from '../../components/GridLayout'
 import CSS from './AddProduct.module.css'
 import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddProduct = () => {
   const [categoryName, setCategoryName] = useState('');
@@ -19,50 +21,38 @@ const AddProduct = () => {
       reader.onloadend = () => {
         setProductImage("https://images.unsplash.com/photo-1480554840075-72cbdabbf689?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
       };
-
       reader.readAsDataURL(file);
     }
   };
 
   const handleAddProduct = async (e) => {
     e.preventDefault();
-
-   await axios
-      .post("http://localhost:1783/api/postproduct", {
+    try {
+      await axios.post("http://localhost:1783/api/postproduct", {
         categoryName,
         productName,
         newPrice,
         oldPrice,
         quantity,
-        productImage
-      })
-      .then((res) => {
-        console.log(res.data);
-        console.log( categoryName,
-          productName,
-          newPrice,
-          oldPrice,
-          quantity,
-          productImage)
-      })
-      .catch((err) => console.error(err));
-      console.log( categoryName,
-        productName,
-        newPrice,
-        oldPrice,
-        quantity,
-        productImage)
-      setCategoryName('');
-      setNewPrice('');
-      setOldPrice('');
-      setProductImage(null)
-      setQuantity('');
-      setProductName('')
-  }
+        productImage,
+      });
+      toast.success("Product Added Successfully");
+    } catch (err) {
+      toast.error("Product can't be added");
+    }
+
+    setCategoryName('');
+    setProductName('');
+    setNewPrice('');
+    setOldPrice('');
+    setQuantity('');
+    setProductImage("https://images.unsplash.com/photo-1480554840075-72cbdabbf689?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  };
+
   return (
     <GridLayout>
       <h1 className={CSS['addproduct-title']}>Add your Product</h1>
-      <form onSubmit={handleAddProduct} className={CSS['from-container']}>
+      <form  className={CSS['from-container']}>
         <div>
           <div className={CSS['product-name-div']}>
             <label htmlFor='product-name'>Category Name</label>
@@ -88,13 +78,14 @@ const AddProduct = () => {
             <label htmlFor='product-img'>Select Image</label>
             <input required className='' accept='.jpg, .jpeg, .png' type='file' id='product-img' onChange={handleImageChange} />
           </div>
-          <button type='submit' className={CSS['product-button']}>Add Product</button>
+          <button type='submit' onClick={handleAddProduct} className={CSS['product-button']}>Add Product</button>
         </div>
         <div className={CSS['product-img-div']}>
           {productImage && (
             <img className={CSS['product-img']} src={productImage} alt='Selected Category' width={'300px'} height={'300px'} />
           )}
         </div>
+        <ToastContainer />
       </form>
     </GridLayout>
   )

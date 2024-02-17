@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import CSS from './EditCategory.module.css';
 import GridLayout from '../../components/GridLayout';
 import axios from 'axios';
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const EditCategory = () => {
   const [categories, setCategories] = useState([]);
@@ -21,17 +23,18 @@ const EditCategory = () => {
 
   const handleEditCategory = (e) => {
     e.preventDefault();
-    // Implement your edit logic here
   };
 
   const handleDeleteCategory = (categoryId) => {
     axios
       .delete(`http://localhost:1783/api/deletecategory/${categoryId}`)
       .then((res) => {
-        // After successful deletion, fetch data again to update the list
         fetchData();
+        toast.success("Category deleted Successfully");
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        toast.error("Error in deleting category");
+      });
   };
 
   return (
@@ -75,6 +78,7 @@ const EditCategory = () => {
           ))}
         </tbody>
       </table>
+      <ToastContainer/>
     </GridLayout>
   );
 };

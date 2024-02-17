@@ -5,12 +5,10 @@
     padding: 15px;
 }
 
-
 .table {
     background-color: var(--white-color);
     margin: 10px;
     color: var(--white-color);
-
 }
 
 .table-head-row {

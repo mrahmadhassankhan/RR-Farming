@@ -11,6 +11,7 @@ router.route("/login").post(Login);
 router.route("/register").post(Register);
 
 
+
 //admin routes
 router.route("/postcategory").post(postCategory);
 router.route("/getcategory").get(getCategories);

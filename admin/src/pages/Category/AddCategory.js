@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import CSS from './AddCategory.module.css'
 import GridLayout from '../../components/GridLayout'
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddCategory = () => {
   const [categoryName, setCategoryName] = useState('');
@@ -12,14 +14,10 @@ const AddCategory = () => {
     const file = e.target.files[0];
 
     if (file) {
-      // Use FileReader to read the selected image
       const reader = new FileReader();
-
       reader.onloadend = () => {
-        // Set the categoryImage state with the data URL of the selected image
         setCategoryImage(reader.result);
       };
-
       reader.readAsDataURL(file);
     }
   };
@@ -32,10 +30,10 @@ const AddCategory = () => {
     formData.append('categoryImage', categoryImage);
 
     try {
-      const res = await axios.post("http://localhost:1783/api/postcategory", formData);
-      console.log(res.data);
+      await axios.post("http://localhost:1783/api/postcategory", formData);
+      toast.success('Successfully Added Category')
     } catch (err) {
-      console.error(err);
+      toast.error("Error in Adding Category")
     }
   };
   return (
@@ -59,6 +57,7 @@ const AddCategory = () => {
           )}
         </div>
       </form>
+      <ToastContainer/>
     </GridLayout>
   )
 }
