@@ -22,7 +22,26 @@ const postproduct = AsyncHandler(async (req, res) => {
 
 const getproduct = AsyncHandler(async (req, res) => {
     const products = await ProductModel.find();
+    console.log(products)
     res.status(200).json(products);
 });
 
-module.exports = { postproduct, getproduct };
+
+const deleteproduct = AsyncHandler(async (req, res) => {
+    const productId = req.params.productId;
+    try {
+        const deletedProduct = await ProductModel.findOneAndDelete(({ _id: productId }));
+        if (!deletedProduct) {
+            return res.status(404).json({ message: 'Product not found' });
+        }
+
+        console.log('Product deleted successfully');
+        res.status(200).json({ message: 'Product deleted successfully' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
+module.exports = { postproduct, getproduct,deleteproduct };
+
+

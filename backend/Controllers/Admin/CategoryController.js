@@ -2,7 +2,7 @@ const AsyncHandler = require("express-async-handler");
 const CategoryModel = require("../../Models/AdminModel/CategoryModel");
 const mongoose = require('mongoose');
 
-const postcategory = AsyncHandler(async (req, res) => {
+const postCategory = AsyncHandler(async (req, res) => {
   const { categoryName, categoryImage } = req.body;
   try {
     const existingCategory = await CategoryModel.findOne({ categoryName });
@@ -49,4 +49,4 @@ const deleteCategory = AsyncHandler(async (req, res) => {
 });
 
 
-module.exports = { postcategory, getCategories, deleteCategory };
+module.exports = { postCategory, getCategories, deleteCategory };
