@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import GridLayout from '../../components/GridLayout'
-
-import './UserQuery.css'
+import CSS from './UserQuery.module.css'
 import axios from 'axios'
 
 const UserQuery = () => {
@@ -16,7 +15,7 @@ const UserQuery = () => {
   }, []);
   return (
     <GridLayout>
-      <h1 className='addproduct-title'>User Query List</h1>
+      <h1 className={CSS['addproduct-title']}>User Query List</h1>
       <table>
         <thead>
           <th>Id</th>

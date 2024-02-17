@@ -1,5 +1,6 @@
 const AsyncHandler = require("express-async-handler");
 const CategoryModel = require("../../Models/AdminModel/CategoryModel");
+const mongoose = require('mongoose');
 
 const postcategory = AsyncHandler(async (req, res) => {
   const { categoryName, categoryImage } = req.body;
@@ -21,9 +22,31 @@ const postcategory = AsyncHandler(async (req, res) => {
   }
 });
 
+
+
 const getCategories = AsyncHandler(async (req, res) => {
   const categories = await CategoryModel.find();
   res.status(200).json(categories);
 });
 
-module.exports = { postcategory, getCategories };
+
+
+const deleteCategory = AsyncHandler(async (req, res) => {
+  const categoryId = req.params.categoryId;
+  try {
+    const deletedCategory = await CategoryModel.findOneAndDelete(({ _id: categoryId }));
+    if (!deletedCategory) {
+      return res.status(404).json({ message: 'Category not found' });
+    }
+
+    // Respond with a success message
+    console.log('Category deleted successfully');
+    res.status(200).json({ message: 'Category deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+module.exports = { postcategory, getCategories, deleteCategory };
