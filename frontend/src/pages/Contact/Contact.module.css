@@ -66,13 +66,21 @@
     width: auto;
 }
 
-.contactus-email,
+.contactus-email {
+    height: 45px;
+    padding: 15px;
+    outline: none;
+    border: none;
+    font-size: 1.1rem;
+}
+
 .contactus-name {
     height: 45px;
     padding: 15px;
     outline: none;
     border: none;
     font-size: 1.1rem;
+    text-transform: capitalize;
 }
 
 .contactus-subject-container,
@@ -92,6 +100,7 @@
     border: none;
     font-size: 1.1rem;
     width: 100%;
+    text-transform: capitalize;
 }
 
 .contactus-message {
@@ -100,6 +109,10 @@
     border: none;
     font-size: 1.1rem;
     width: 100%;
+}
+
+.contactus-message::first-letter{
+    text-transform: uppercase;
 }
 
 .contactus-label {

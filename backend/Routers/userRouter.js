@@ -3,7 +3,7 @@ const { Login, Register } = require("../Controllers/userController");
 
 const {postCategory,getCategories,deleteCategory} =require('../Controllers/Admin/CategoryController')
 const { postproduct, getproduct, deleteproduct } = require('../Controllers/Admin/ProductController')
-const { postcontactus, getcontactus } = require('../Controllers/Admin/ContactUsController')
+const { postcontactus, getcontactus, deletecontactus } = require('../Controllers/Admin/ContactUsController')
 
 const router = express.Router();
 
@@ -22,6 +22,7 @@ router.route("/deleteproduct/:productId").delete(deleteproduct);
 
 router.route("/postcontactus").post(postcontactus);
 router.route("/getcontactus").get(getcontactus);
+router.route("/deletecontactus/:queryId").delete(deletecontactus);
 
 
 module.exports = router;

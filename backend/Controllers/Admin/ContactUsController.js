@@ -25,4 +25,20 @@ const getcontactus = AsyncHandler(async (req, res) => {
     res.status(200).json(contactus);
 });
 
-module.exports = { postcontactus, getcontactus };
+const deletecontactus = AsyncHandler(async (req, res) => {
+    const queryId = req.params.queryId;
+    try {
+        const deletedQuery = await ContactUsModel.findOneAndDelete(({ _id: queryId }));
+        if (!deletedQuery) {
+            return res.status(404).json({ message: 'Query not found' });
+        }
+
+        console.log('Query deleted successfully');
+        res.status(200).json({ message: 'Query deleted successfully' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
+module.exports = { postcontactus, getcontactus, deletecontactus };
