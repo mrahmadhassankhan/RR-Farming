@@ -18,6 +18,7 @@ const Home = () => {
     };
 
     fetchData();
+    sessionStorage.removeItem("clickedItem");
   }, []);
 
   const Data = [{

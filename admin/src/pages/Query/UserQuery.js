@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import GridLayout from '../../components/GridLayout';
 import CSS from './UserQuery.module.css';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const UserQuery = () => {
   const [queries, setQueries] = useState([]);
@@ -16,17 +18,26 @@ const UserQuery = () => {
       .then((res) => {
         setQueries(res.data);
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        toast.error('Error in Data Fetching')
+      });
   };
 
   const handleDeleteCategory = (queryId) => {
     axios
       .delete(`http://localhost:1783/api/deletecontactus/${queryId}`)
       .then((res) => {
-        // After successful deletion, fetch data again to update the list
         fetchData();
+        toast.success('Successfully Deleted Query', {
+          className: 'custom-toast-error',
+        });
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        toast.error('Error in Deleting Query', {
+          className: 'custom-toast-error',
+        });
+      }
+      );
   };
 
   return (
@@ -35,7 +46,6 @@ const UserQuery = () => {
       <table className={CSS['table']}>
         <thead>
           <tr>
-            <th className={CSS['table-head-row']}>Id</th>
             <th className={CSS['table-head-row']}>Name</th>
             <th className={CSS['table-head-row']}>Subject</th>
             <th className={CSS['table-head-row']}>Email</th>
@@ -46,7 +56,6 @@ const UserQuery = () => {
         <tbody>
           {queries.map((query) => (
             <tr key={query._id}>
-              <td className={CSS['table-data']}>{query._id}</td>
               <td className={CSS['table-data']}>{query.name}</td>
               <td className={CSS['table-data']}>{query.subject}</td>
               <td className={CSS['table-data']}>{query.email}</td>
@@ -64,6 +73,7 @@ const UserQuery = () => {
           ))}
         </tbody>
       </table>
+      <ToastContainer/>
     </GridLayout>
   );
 };

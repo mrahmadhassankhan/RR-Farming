@@ -24,22 +24,20 @@ const AddCategory = () => {
     }
   };
 
-const handleAddCategory = async (e) => {
-  e.preventDefault();
+  const handleAddCategory = async (e) => {
+    e.preventDefault();
 
-  const formData = new FormData();
-  formData.append('categoryName', categoryName);
-  formData.append('categoryImage', categoryImage);
+    const formData = new FormData();
+    formData.append('categoryName', categoryName);
+    formData.append('categoryImage', categoryImage);
 
-  try {
-    const res = await axios.post("http://localhost:1783/api/postcategory", formData);
-    console.log(res.data);
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-  
+    try {
+      const res = await axios.post("http://localhost:1783/api/postcategory", formData);
+      console.log(res.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
   return (
     <GridLayout>
       <h1 className={CSS['addcategory-title']}>Add your Category</h1>
@@ -53,7 +51,7 @@ const handleAddCategory = async (e) => {
             <label htmlFor='category-img'>Select Image</label>
             <input required className='' accept='.jpg, .jpeg, .png' type='file' id='category-img' onChange={handleImageChange} />
           </div>
-            <button type='submit' className={CSS['category-button']}>Add Category</button>
+          <button type='submit' className={CSS['category-button']}>Add Category</button>
         </div>
         <div className={CSS['category-img-div']}>
           {categoryImage && (

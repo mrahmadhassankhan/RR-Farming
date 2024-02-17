@@ -9,7 +9,7 @@ function CommunityCard(props) {
       <div className={CSS['card-container']}>
         <div className={CSS['card-img']}>
           <img className={CSS['img']} src={props.communityImg} alt='Rabbit' />
-          <Link to={'/addtocart'} className={`${CSS['button-container']}`}>
+          <Link to={''} className={`${CSS['button-container']}`}>
             <button className={CSS['button']}>
               Join Community
             </button>

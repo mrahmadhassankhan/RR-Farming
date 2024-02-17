@@ -30,14 +30,12 @@ const deletecontactus = AsyncHandler(async (req, res) => {
     try {
         const deletedQuery = await ContactUsModel.findOneAndDelete(({ _id: queryId }));
         if (!deletedQuery) {
-            return res.status(404).json({ message: 'Query not found' });
+            return res.status(404).json('Query not found');
         }
-
-        console.log('Query deleted successfully');
-        res.status(200).json({ message: 'Query deleted successfully' });
+        res.status(200).json('Query deleted successfully');
     } catch (error) {
         console.error(error);
-        res.status(500).json({ message: 'Internal server error' });
+        res.status(500).json('Internal server error');
     }
 });
 

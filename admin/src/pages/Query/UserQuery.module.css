@@ -10,18 +10,15 @@
     background-color: var(--white-color);
     margin: 10px;
     color: var(--white-color);
+
 }
 
 .table-head-row {
     background-color: var(--primary-color);
-    height: 40px;
     padding: 10px 15px;
     font-size: 1.3rem;
-
+    width: 5%;
 }
-
-
-
 .table-head-btn {
     width: 15%;
 }
@@ -50,3 +47,7 @@
 .table-data-delete-btn:hover {
     background-color: rgba(255, 0, 0, 0.601);
 }
+
+
+
+

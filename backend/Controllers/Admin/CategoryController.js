@@ -36,15 +36,13 @@ const deleteCategory = AsyncHandler(async (req, res) => {
   try {
     const deletedCategory = await CategoryModel.findOneAndDelete(({ _id: categoryId }));
     if (!deletedCategory) {
-      return res.status(404).json({ message: 'Category not found' });
+      return res.status(404).json('Category not found' );
     }
 
-    // Respond with a success message
-    console.log('Category deleted successfully');
-    res.status(200).json({ message: 'Category deleted successfully' });
+    res.status(200).json('Category deleted successfully');
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Internal server error' });
+    res.status(500).json('Internal server error');
   }
 });
 

@@ -1,13 +1,22 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import CSS from './CategoryCard.module.css'
 import { Link } from 'react-router-dom';
 
-const CategoryCard = ({item}) => {
-    const [dilIcon, setDilIcon] = useState(false);
+const CategoryCard = ({ item }) => {
+  const [dilIcon, setDilIcon] = useState(false);
 
-    const handleDilIcon = () => {
-      setDilIcon(!dilIcon);
+  const handleDilIcon = () => {
+    setDilIcon(!dilIcon);
+  };
+  const handleCardClick = () => {
+    const itemDetails = {
+      title: item.productName,
+      newPrice: item.newPrice,
+      oldPrice: item.oldPrice,
+      img: item.productImage,
     };
+    sessionStorage.setItem("clickedItem", JSON.stringify(itemDetails));
+  };
   return (
     <div className={CSS["wrapper-grid"]}>
       <div className={CSS["card-container"]}>
@@ -21,7 +30,7 @@ const CategoryCard = ({item}) => {
             to={"/addtocart"}
             className={`${CSS["button-container"]} button-container`}
           >
-            <button className={CSS["button"]}>Buy</button>
+            <button className={CSS["button"]} onClick={handleCardClick}>Buy</button>
           </Link>
         </div>
         <div className={CSS["card-data-container"]}>
@@ -29,9 +38,8 @@ const CategoryCard = ({item}) => {
             <p className={CSS["card-title"]}>{item.productName}</p>
             <i
               onClick={handleDilIcon}
-              className={`${CSS["card-icon"]} ${
-                dilIcon ? "fa-solid fa-heart" : "fa-regular fa-heart"
-              }`}
+              className={`${CSS["card-icon"]} ${dilIcon ? "fa-solid fa-heart" : "fa-regular fa-heart"
+                }`}
             ></i>
           </div>
           <div className={CSS["card-data-inner-container2"]}>
