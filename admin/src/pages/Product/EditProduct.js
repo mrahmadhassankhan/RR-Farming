@@ -12,11 +12,8 @@ const EditProduct = () => {
     }, [])
     const [products, setProducts] = useState([]);
     const fetchData = () => {
-        axios
-            .get("http://localhost:1783/api/getproduct")
-            .then((res) => {
-                setProducts(res.data);
-            })
+        axios.get("http://localhost:1783/api/getproduct")
+            .then((res) => { setProducts(res.data); })
             .catch((err) => console.error(err));
     }
 
@@ -24,8 +21,16 @@ const EditProduct = () => {
 
     }
     const handleDeleteProduct = (productId) => {
-
-    }
+        axios
+            .delete(`http://localhost:1783/api/deleteproduct/${productId}`)
+            .then((res) => {
+                fetchData();
+                toast.success("Product deleted Successfully");
+            })
+            .catch((err) => {
+                toast.error("Error in deleting product");
+            });
+    };
     return (
         <GridLayout>
             <h1 className={CSS['addproduct-title']}>Edit your Product</h1>
