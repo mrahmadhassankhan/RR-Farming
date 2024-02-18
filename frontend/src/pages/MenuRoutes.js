@@ -9,6 +9,7 @@ import Login from './Login/Login';
 import CheckOut from '../components/CheckOut/CheckOut';
 import SearchShow from './SearchShow/SearchShow';
 import ForgetPassword from './ForgetPassword/ForgetPassword';
+import Address from './Address/Address';
 
 const MenuRoutes = () => {
   return (
@@ -23,6 +24,7 @@ const MenuRoutes = () => {
         <Route path='/forgetpassword' element={<ForgetPassword />} />
         <Route path='/checkout' element={<CheckOut />} />
         <Route path='/search-results' element={<SearchShow />} />
+        <Route path='/address' element={<Address />} />
       </Routes>
     </Router>
   );

@@ -8,7 +8,7 @@ import img4 from '../../Home/TrendProductSection/images/rabbit2.jpg'
 
 const LikeSection = () => {
     const LikeCardata = [{
-        title: "Multi-color rabbit meat",
+        title: "Rabbit meat",
         price: 19.65,
         img: img1
     },

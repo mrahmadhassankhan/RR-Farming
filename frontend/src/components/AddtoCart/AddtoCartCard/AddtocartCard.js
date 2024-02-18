@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AddtocartCard = () => {
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(1);
     const [clickedItem, setClickedItem] = useState({});
 
     useEffect(() => {
@@ -14,14 +14,17 @@ const AddtocartCard = () => {
         setClickedItem(parsedItemDetails);
     }, []);
 
-    const handleInputData = (event) => {
-        if (event.target.value > -1 && event.target.value < 25) {
-            setQuantity(event.target.value);
-        }
-    }
-    const handleBuyNow = (e) => {
-        e.preventDefault();
-    }
+    const handleBuyClick = () => {
+        const itemDetails = {
+          productName: clickedItem.title,
+          newPrice: clickedItem.newPrice,
+          description: clickedItem.description,
+          quantity: quantity,
+          productImage: clickedItem.img,
+        };
+        sessionStorage.setItem("buyItem", JSON.stringify(itemDetails));
+      };
+
     return (
         <div className={`${CSS['container']} container`}>
             <div className={CSS['grid-container']}>
@@ -34,10 +37,10 @@ const AddtocartCard = () => {
                     <p className={CSS['addtocart-details']}>{clickedItem.description}</p>
                     <p className={CSS['addtocart-reviews']}>Available quantity: {clickedItem.quantity}</p>
                     <div className={CSS['addtocart-quantity']}>
-                        Qty: <input required min={'0'} max={'20'} type='number' name='quantity' className={CSS['addtocart-qty-input']} placeholder='0' value={quantity} onChange={handleInputData} />
+                        Qty: <input min={0} max={20} type='number' id='quantity' name='quantity' className={CSS['addtocart-qty-input']} placeholder='0' value={quantity} onChange={(e)=>setQuantity(e.target.value)} required />
                     </div>
-                    <Link to={'/checkout'} className={CSS['addtocart-link']}>
-                        <button type='submit' onClick={handleBuyNow} className={CSS['addtocart-link-btn']}>Buy now</button>
+                    <Link to={'/address'} className={CSS['addtocart-link']}>
+                        <button type='button' onClick={handleBuyClick}  className={CSS['addtocart-link-btn']}>Buy now</button>
                     </Link>
                     <button type='submit' onClick={() => toast.success('Item Added to Cart')} className={CSS['addtocart-link-btn']}>Add to cart</button>
                 </div>
