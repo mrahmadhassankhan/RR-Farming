@@ -2,7 +2,7 @@ const AsyncHandler = require("express-async-handler");
 const ProductModel = require("../../Models/AdminModel/ProductModel");
 
 const postproduct = AsyncHandler(async (req, res) => {
-    const { categoryName,productName,newPrice, oldPrice,quantity } = req.body;
+    const { categoryName,productName,description,newPrice, oldPrice,quantity } = req.body;
     try {
         const existingProduct = await ProductModel.findOne({ productName });
         if (existingProduct) {
@@ -10,7 +10,7 @@ const postproduct = AsyncHandler(async (req, res) => {
         }
         const productImage = req.file.filename;
         await ProductModel.create({
-            categoryName,productName,newPrice, oldPrice,quantity,productImage
+            categoryName,productName,description,newPrice, oldPrice,quantity,productImage
         });
 
         res.status(201).json("Successfully Added Product");

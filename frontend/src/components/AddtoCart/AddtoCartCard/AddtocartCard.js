@@ -30,9 +30,9 @@ const AddtocartCard = () => {
                 </div>
                 <div className={CSS['data-container']}>
                     <h2 className={CSS['addtocart-title']}>{clickedItem.title}</h2>
-                    <p className={CSS['addtocart-reviews']}>(4.8/5, 12 reviews)</p>
                     <h4 className={CSS['addtocart-new-price']}>Rs. {clickedItem.newPrice} <del className={CSS['addtocart-old-price']}>Rs. {clickedItem.oldPrice}</del></h4>
-                    <p className={CSS['addtocart-details']}>A one of a kind heated rabbit meat and vegetables, including a delicious taste and warming features.</p>
+                    <p className={CSS['addtocart-details']}>{clickedItem.description}</p>
+                    <p className={CSS['addtocart-reviews']}>Available quantity: {clickedItem.quantity}</p>
                     <div className={CSS['addtocart-quantity']}>
                         Qty: <input required min={'0'} max={'20'} type='number' name='quantity' className={CSS['addtocart-qty-input']} placeholder='0' value={quantity} onChange={handleInputData} />
                     </div>

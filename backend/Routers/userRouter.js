@@ -12,8 +12,7 @@ router.route("/login").post(Login);
 router.route("/register").post(Register);
 
 
-
-//admin routes
+// routes
 router.route("/postcategory").post(categoryUploadMiddleware,postCategory);
 router.route("/getcategory").get(getCategories);
 router.route("/deletecategory/:categoryId").delete(deleteCategory);

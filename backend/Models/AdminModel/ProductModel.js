@@ -10,6 +10,10 @@ const productSchema = mongoose.Schema({
     required: true,
     unique:true
   },
+  description:{
+    type: String,
+    required:true
+  },
   newPrice: {
     type: String,
     required: true,
@@ -18,6 +22,10 @@ const productSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  quantity: {
+    type: String,
+    required: true,
+  },  
   quantity: {
     type: String,
     required: true,

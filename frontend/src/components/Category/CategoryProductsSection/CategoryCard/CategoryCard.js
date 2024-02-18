@@ -13,6 +13,8 @@ const CategoryCard = ({ item }) => {
       title: item.productName,
       newPrice: item.newPrice,
       oldPrice: item.oldPrice,
+      description: item.description,
+      quantity: item.quantity,
       img: `http://localhost:1783/Images/${item.productImage}`
     };
     sessionStorage.setItem("clickedItem", JSON.stringify(itemDetails));

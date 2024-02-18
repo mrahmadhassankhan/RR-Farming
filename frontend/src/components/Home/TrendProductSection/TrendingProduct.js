@@ -9,64 +9,26 @@ import rabbitmeat2 from "./images/rabbitmeat2.jpg";
 import rabbitmeat3 from "./images/rabbitmeat3.jpg";
 import axios from "axios";
 const TrendingProduct = () => {
-  // const [trendingproducts, setTrendingProducts] = useState([]);
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:1783/api/gettrendingproducts")
-  //     .then((res) => {
-  //       console.log(res.data);
-  //       setTrendingProducts(res.data);
-  //     })
-  //     .catch((err) => console.error(err));
-  // }, []);
-  const trendingproduct = [
-    {
-      title: "rabbit Angora",
-      newPrice: 13.99,
-      oldPrice: 21.99,
-      img: rabbit1,
-    },
-    {
-      title: "rabbit Belgian",
-      newPrice: 19.99,
-      oldPrice: 30.99,
-      img: rabbit2,
-    },
-    {
-      title: "rabbit Flemish",
-      newPrice: 8.99,
-      oldPrice: 13.99,
-      img: rabbit3,
-    },
-    {
-      title: "Flemish rabbit Meat",
-      newPrice: 6.39,
-      oldPrice: 11.99,
-      img: rabbitmeat1,
-    },
-    {
-      title: "rabbit Meat",
-      newPrice: 12.9,
-      oldPrice: 17.99,
-      img: rabbitmeat2,
-    },
-    {
-      title: "Angora rabbit Meat",
-      newPrice: 9.21,
-      oldPrice: 12.99,
-      img: rabbitmeat3,
-    },
-  ];
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:1783/api/getproduct")
+      .then((res) => {
+        const sortedProducts = res.data.sort((a, b) =>
+          a.productName.localeCompare(b.productName)
+        );
+        setProducts(sortedProducts.slice(0, 6));
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
     <div>
       <div className={CSS["trending-products-div"]}>
         <p className={CSS["trending-products-title"]}>Trending Products</p>
       </div>
-      {trendingproduct.map((item,index) => (
-        <TrendingCard
-          key={index}
-          item={item}
-        />
+      {products.map((item) => (
+        <TrendingCard key={item._id} item={item} />
       ))}
     </div>
   );

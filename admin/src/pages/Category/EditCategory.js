@@ -17,7 +17,10 @@ const EditCategory = () => {
     axios
       .get("http://localhost:1783/api/getcategory")
       .then((res) => {
-        setCategories(res.data);
+        const sortedCategory = res.data.sort((a, b) =>
+          a.categoryName.localeCompare(b.categoryName)
+        );
+        setCategories(sortedCategory);
       })
       .catch((err) => console.error(err));
   };

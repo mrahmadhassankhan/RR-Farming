@@ -7,10 +7,12 @@ const TrendingCard = ({ item }) => {
 
   const handleCardClick = () => {
     const itemDetails = {
-      title: item.title,
+      title: item.productName,
       newPrice: item.newPrice,
       oldPrice: item.oldPrice,
-      img: item.img,
+      description: item.description,
+      quantity: item.quantity,
+      img: `http://localhost:1783/Images/${item.productImage}`,
     };
     sessionStorage.setItem("clickedItem", JSON.stringify(itemDetails));
   };
@@ -23,7 +25,11 @@ const TrendingCard = ({ item }) => {
     <div className={CSS["wrapper-grid"]} onClick={handleCardClick}>
       <div className={CSS["card-container"]}>
         <div className={CSS["card-img"]}>
-          <img className={CSS["img"]} src={item.img} alt={item.title} />
+          <img
+            className={CSS["img"]}
+            src={`http://localhost:1783/Images/${item.productImage}`}
+            alt={item.productName}
+          />
           <Link
             to={"/addtocart"}
             className={`${CSS["button-container"]} button-container`}
@@ -35,11 +41,12 @@ const TrendingCard = ({ item }) => {
         </div>
         <div className={CSS["card-data-container"]}>
           <div className={CSS["card-data-inner-container1"]}>
-            <p className={CSS["card-title"]}>{item.title}</p>
+            <p className={CSS["card-title"]}>{item.productName}</p>
             <i
               onClick={handleDilIcon}
-              className={`${CSS["card-icon"]} ${dilIcon ? "fa-solid fa-heart" : "fa-regular fa-heart"
-                }`}
+              className={`${CSS["card-icon"]} ${
+                dilIcon ? "fa-solid fa-heart" : "fa-regular fa-heart"
+              }`}
             ></i>
           </div>
           <div className={CSS["card-data-inner-container2"]}>

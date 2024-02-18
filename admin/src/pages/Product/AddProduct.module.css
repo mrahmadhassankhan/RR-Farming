@@ -24,12 +24,22 @@
     margin: 10px auto;
 }
 
+.product-description-div{
+    display: inline-block;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 10px auto;
+}
+
 .product-name-div label,
 .product-selectimg-div label,
 .product-new-price-div label,
 .product-old-name-div label,
 .product-product-name-div label ,
-.product-quantity-div label{
+.product-quantity-div label,
+.product-description-div label{
     text-align: left;
     color: var(--white-color);
     font-weight: 400;
@@ -44,6 +54,18 @@
 .product-quantity-div input {
     margin: 0px 0px 0px 60px;
     height: 50px;
+    font-size: 1.2rem;
+    color: var(--black-color);
+    padding: 5px 15px;
+    font-weight: 500;
+    outline: none;
+    border: 0px solid var(--primary-color);
+    background-color: var(--white-color);
+}
+
+.product-description-div textarea{
+    margin: 0px 0px 0px 60px;
+    height: 80px;
     font-size: 1.2rem;
     color: var(--black-color);
     padding: 5px 15px;
