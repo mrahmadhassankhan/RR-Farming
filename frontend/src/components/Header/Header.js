@@ -33,9 +33,9 @@ const Header = () => {
                     <li className={CSS.items}><Link className={CSS.navItem} to={'/aboutus'}>About</Link></li>
                 </ul>
                 <div className={CSS['cart-login-container']}>
-                    <Link to={'/checkout'} className={CSS.action_btn}>
+                    {/* <Link to={'/checkout'} className={CSS.action_btn}>
                         <i className="fa-solid fa-cart-shopping"></i>
-                    </Link>
+                    </Link> */}
                     <div className={CSS.action_btn} onClick={toggleLoginPopup}>
                         <i className="fa-solid fa-user"></i>
                     </div>

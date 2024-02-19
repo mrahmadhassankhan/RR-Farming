@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import CSS from './EditCategory.module.css';
 import GridLayout from '../../components/GridLayout';
 import axios from 'axios';
-import { ToastContainer,toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const EditCategory = () => {
   const [categories, setCategories] = useState([]);
-  const [updateCategory,setUpdateCategory]=useState([]);
+  const [updateCategory, setUpdateCategory] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -52,7 +52,7 @@ const EditCategory = () => {
           <tr>
             <th className={CSS['table-head-row']}>Category Name</th>
             <th className={CSS['table-head-row']}>Category Image</th>
-            <th className={`${CSS['table-head-row']} ${CSS['table-head-btn']}`}>Edit Category</th>
+            {/* <th className={`${CSS['table-head-row']} ${CSS['table-head-btn']}`}>Edit Category</th> */}
             <th className={`${CSS['table-head-row']} ${CSS['table-head-btn']}`}>Delete Category</th>
           </tr>
         </thead>
@@ -63,13 +63,13 @@ const EditCategory = () => {
               <td className={CSS['table-data']}>
                 <img src={`http://localhost:1783/Images/${list.categoryImage}`} alt={list.categoryName} width={'80px'} height={'80px'} />
               </td>
-              <td className={CSS['table-data']}>
+              {/* <td className={CSS['table-data']}>
                 <button  className={CSS['table-data-edit-btn']}  type='button'  onClick={()=>handleEditCategory(list._id)} >
                   Edit
                 </button>
-              </td>
+              </td> */}
               <td className={CSS['table-data']}>
-                <button className={CSS['table-data-delete-btn']}  type='button'  onClick={() => handleDeleteCategory(list._id)} >
+                <button className={CSS['table-data-delete-btn']} type='button' onClick={() => handleDeleteCategory(list._id)} >
                   Delete
                 </button>
               </td>
@@ -77,7 +77,7 @@ const EditCategory = () => {
           ))}
         </tbody>
       </table>
-      <ToastContainer/>
+      <ToastContainer />
     </GridLayout>
   );
 };

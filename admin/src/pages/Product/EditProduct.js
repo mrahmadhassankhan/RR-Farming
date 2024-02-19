@@ -53,7 +53,6 @@ const EditProduct = () => {
             <th className={CSS["table-head-row"]}>New Price</th>
             <th className={CSS["table-head-row"]}>Old Price</th>
             <th className={CSS["table-head-row"]}>Quantity</th>
-            <th className={CSS["table-head-row"]}>Description</th>
             <th className={CSS["table-head-row"]}>Image</th>
             <th className={`${CSS["table-head-row"]} ${CSS["table-head-btn"]}`}>
               Edit Product
@@ -71,7 +70,6 @@ const EditProduct = () => {
               <td className={CSS["table-data"]}>{product.newPrice}</td>
               <td className={CSS["table-data"]}>{product.oldPrice}</td>
               <td className={CSS["table-data"]}>{product.quantity}</td>
-              <td className={CSS["table-data"]}>{product.description}</td>
               <td className={CSS["table-data"]}>
                 <img
                   src={`http://localhost:1783/Images/${product.productImage}`}
