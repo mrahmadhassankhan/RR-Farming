@@ -142,7 +142,7 @@ const EnterDetailsBuy = () => {
                   <p>Description: {description}</p>
                     <p>Quantity: {quantity}</p>
                     <p>Delivery charges should be applied and added in total amount. Rs.150</p>
-                  <h2>Price: {price}</h2>
+                  <h2>Total Price: {price}</h2>
                 </div>
               </div>
             </div>

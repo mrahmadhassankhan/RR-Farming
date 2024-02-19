@@ -44,7 +44,6 @@ const Orders = () => {
             <th className={CSS["table-head-row"]}>Product Name</th>
             <th className={CSS["table-head-row"]}>Quantity</th>
             <th className={CSS["table-head-row"]}>Price</th>
-            <th className={CSS["table-head-row"]}>Description</th>
             <th className={`${CSS["table-head-row"]} ${CSS["table-head-btn"]}`}>
               Delete Order
             </th>
@@ -57,10 +56,9 @@ const Orders = () => {
               <td className={CSS["table-data"]}>{order.email}</td>
               <td className={CSS["table-data"]}>{order.number}</td>
               <td className={CSS["table-data"]}>{order.address+" "}{order.city+" "}{order.country}</td>
-              <td className={CSS["table-data"]}>{order.productName}</td>
+              <td className={CSS["table-data"]}>{order.productname}</td>
               <td className={CSS["table-data"]}>{order.quantity}</td>
               <td className={CSS["table-data"]}>{order.price}</td>
-              <td className={CSS["table-data"]}>{order.description}</td>
               <td className={CSS["table-data"]}>
                 <button  className={CSS["table-data-delete-btn"]}  type="button"  onClick={() => handleDeleteProduct(order._id)}  >
                   Delete

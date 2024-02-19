@@ -22,7 +22,7 @@ const LikeSection = () => {
             <div className='container'>
                 <h1 className={CSS['like-title']}>You might also like</h1>
                 {products.map((item) => (
-                    <LikeCard key={products._id} item={item}/>
+                    <LikeCard key={item._id} item={item}/>
                 ))}
             </div>
         </div>

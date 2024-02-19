@@ -34,6 +34,7 @@ const getCategories = AsyncHandler(async (req, res) => {
 
 const deleteCategory = AsyncHandler(async (req, res) => {
   const categoryId = req.params.categoryId;
+  console.log(categoryId)
   try {
     const deletedCategory = await CategoryModel.findOneAndDelete(({ _id: categoryId }));
     if (!deletedCategory) {

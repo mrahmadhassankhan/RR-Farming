@@ -4,7 +4,7 @@ import img from '../../../images/rabbit.jpg'
 import {useNavigate  } from 'react-router-dom'
 
 
-const TitleSection = ({SearchItem}) => {
+const TitleSection = ({fetchedData}) => {
     const [searchValue,setSearchvalue] = useState('');
     const navigate  = useNavigate ();
     const handleInputdata = (event) => {
@@ -12,8 +12,8 @@ const TitleSection = ({SearchItem}) => {
     }
     const handleSearch = (event) =>{
       event.preventDefault();
-      const foundItems = SearchItem(searchValue)
-      localStorage.setItem('searchResults', JSON.stringify({ foundItems, searchValue }));
+      const foundItems = fetchedData.filter(item => item.productName.toLowerCase().includes(searchValue.toLowerCase()));
+      sessionStorage.setItem('searchResults', JSON.stringify({ foundItems, searchValue }));
       navigate('/search-results');
     }
     return (

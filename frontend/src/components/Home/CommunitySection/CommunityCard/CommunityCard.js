@@ -1,6 +1,5 @@
 import React from 'react'
 import CSS from './CommunityCard.module.css'
-import img from '../../TrendProductSection/images/rabbit2.jpg'
 import { Link } from 'react-router-dom'
 
 function CommunityCard(props) {

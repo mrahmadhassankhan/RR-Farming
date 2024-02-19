@@ -1,10 +1,11 @@
 import './App.css';
 import RouteMenu from './pages/RouteMenu';
+import Login from './pages/Login';
 
 function App() {
   return (
     <div className="App">
-      <RouteMenu/>
+      <Login/>
     </div>
   );
 }

@@ -5,14 +5,13 @@ const generateToken = require("../utils/generateToken");
 const Register = asynchandler(async (req, res) => {
   const { username, email, password } = req.body;
 
-  // Check if user already exists in Database
   const userExists = await User.findOne({ email });
 
   if (userExists) {
     res.status(400);
     throw new Error("User Already Exists");
   }
-  //Crete New User
+
   const user = await User.create({
     username,
     email,
@@ -20,7 +19,7 @@ const Register = asynchandler(async (req, res) => {
   });
 
   if (user) {
-    //201 is for successful
+
     res.status(201).json({
       _id: user.id,
       username: user.username,

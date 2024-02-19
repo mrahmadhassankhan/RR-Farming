@@ -19,6 +19,7 @@
     font-size: 1.1rem;
     color: var(--white-color);
     line-height: 2rem;
+    text-transform: capitalize;
 }
 
 .category-list-item-checkbox{

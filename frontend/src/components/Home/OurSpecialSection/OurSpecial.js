@@ -1,34 +1,29 @@
-import React from 'react';
+import React ,{useEffect,useState} from 'react';
+import axios from "axios"
 import CSS from './OurSpecial.module.css';
 import OurSpecialCard from './OurSpecialCard/OurSpecialCard';
-import rabbit1 from '../TrendProductSection/images/rabbit2.jpg';
-import rabbitmeat1 from '../TrendProductSection/images/rabbitmeat1.jpg';
 
-const OurSpecial = () => {
-  const OurSpecialData = [
-    {
-      title: "Rabbit Belgian",
-      subtitle: 'Buy fresh rabbit meat and more',
-      button: "Shop Now",
-      img: rabbit1,
-      oldPrice: 423.434,
-      newPrice: 687.32
-    },
-    {
-      title: "Flemish Rabbit Meat",
-      subtitle: 'Tender and flavorful rabbit meat',
-      button: "Shop Now",
-      img: rabbitmeat1
-    }
-  ];
+const OurSpecial = ({fetchedData}) => {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:1783/api/getproduct")
+      .then((res) => {
+        const sortedProducts = res.data.sort((a, b) =>
+          a.productName.localeCompare(b.productName)
+        );
+        setProducts(sortedProducts.slice(0, 2));
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
   return (
     <div>
       <div className={CSS['special-div']}>
         <p className={CSS['special-title']}>Our Specialties</p>
       </div>
-      {OurSpecialData.map((item) => (
-        <OurSpecialCard key={item.title} item={item} />
+      {products.map((item) => (
+        <OurSpecialCard key={item._id} item={item} />
       ))}
     </div>
   );

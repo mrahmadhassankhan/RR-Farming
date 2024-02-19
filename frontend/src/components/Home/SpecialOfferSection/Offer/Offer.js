@@ -11,7 +11,7 @@ const Offer = (props) => {
           <img className={CSS['special-offer-img']} src={props.img} alt='dfgdfgdf' />
           <div className={CSS['special-discount']}>{props.discount}% Off</div>
         </div>
-        <Link className={CSS['btn-link']} to={'/addtocart'}>
+        <Link className={CSS['btn-link']} to={''}>
           <button type='submit' className={CSS['search-btn']}>{props.button}</button>
         </Link>
       </div>

@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 const bcrpt = require("bcryptjs");
-// Created the schema for our user for MongoDb
+
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
     unique: true,
-    trim: true, //whitespaces will be removed
+    trim: true,
   },
   email: {
     type: String,
@@ -29,12 +29,12 @@ userSchema.pre("save", async function(next) {
     next();
   }
   const salt = await bcrpt.genSalt(10);
-  this.password = await bcrpt.hash(this.password, salt); // Basically we are encrypting the password enter by user
+  this.password = await bcrpt.hash(this.password, salt);
 });
 
 userSchema.methods.matchPassword = async function(enteredPassword) {
   return await bcrpt.compare(enteredPassword, this.password);
 };
-const UserModel = mongoose.model("User", userSchema); // Created User Model*
+const UserModel = mongoose.model("User", userSchema);
 
 module.exports = UserModel;

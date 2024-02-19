@@ -20,15 +20,11 @@ const upload = multer({
 const categoryUploadMiddleware = (req, res, next) => {
     upload.single("categoryImage")(req, res, (err) => {
         if (err instanceof multer.MulterError) {
-            // A Multer error occurred when uploading.
             return res.status(500).json({ message: "File upload error" });
         } else if (err) {
-            // An unknown error occurred when uploading.
             console.error(err);
             return res.status(500).json({ message: "Unknown error" });
         }
-
-        // No error occurred, proceed to the next middleware/route handler.
         next();
     });
 };
@@ -37,15 +33,11 @@ const categoryUploadMiddleware = (req, res, next) => {
 const productUploadMiddleware = (req, res, next) => {
     upload.single("productImage")(req, res, (err) => {
         if (err instanceof multer.MulterError) {
-            // A Multer error occurred when uploading.
             return res.status(500).json({ message: "File upload error" });
         } else if (err) {
-            // An unknown error occurred when uploading.
             console.error(err);
             return res.status(500).json({ message: "Unknown error" });
         }
-
-        // No error occurred, proceed to the next middleware/route handler.
         next();
     });
 };

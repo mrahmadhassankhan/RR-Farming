@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import CSS from "./TrendingProduct.module.css";
-import TrendingCard from "./TrendingCard/TrendingCard";
-
+import TrendingCard from "./TrendingCard/TrendingCard"
 import axios from "axios";
+
 const TrendingProduct = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
