@@ -4,7 +4,7 @@ const OrderModel = require('../../Models/AdminModel/OrderModel');
 const postorder = AsyncHandler(async (req, res) => {
     const { firstname, lastname, email, number, city, country, address, productname, description, quantity, price} = req.body;
     try {
-        const existingOrder = await OrderModel.findOne({ email });
+        const existingOrder = await OrderModel.findOne({email});
         if (existingOrder) {
             return res.status(400).json({ error: "Email already exists" }); // Return a JSON object with an error message
         }

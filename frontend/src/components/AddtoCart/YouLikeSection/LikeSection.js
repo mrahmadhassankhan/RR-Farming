@@ -1,36 +1,28 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import CSS from './LikeSection.module.css'
 import LikeCard from './LikeCard/LikeCard'
-import img1 from '../../Home/TrendProductSection/images/rabbitmeat1.jpg'
-import img2 from '../../Home/TrendProductSection/images/rabbitmeat2.jpg'
-import img3 from '../../Home/TrendProductSection/images/rabbitmeat3.jpg'
-import img4 from '../../Home/TrendProductSection/images/rabbit2.jpg'
+import axios from 'axios'
 
 const LikeSection = () => {
-    const LikeCardata = [{
-        title: "Rabbit meat",
-        price: 19.65,
-        img: img1
-    },
-    {
-        title: "Ceramic rabbit bowl",
-        price: 12.99,
-        img: img2
-    },{
-        title: "Comfy rabbit cushion",
-        price: 23.67,
-        img: img3
-    },{
-        title: "Cool summer shades",
-        price: 11.35,
-        img: img4
-    }]
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        axios
+            .get("http://localhost:1783/api/getproduct")
+            .then((res) => {
+                const sortedProducts = res.data.sort((a, b) =>
+                    a.productName.localeCompare(b.productName)
+                );
+                setProducts(sortedProducts.slice(0, 4));
+            })
+            .catch((err) => console.error(err));
+    }, []);
+
     return (
         <div className={`${CSS['container-fluid']} container-fluid`}>
             <div className='container'>
                 <h1 className={CSS['like-title']}>You might also like</h1>
-                {LikeCardata.map((item, index) => (
-                    <LikeCard key={index} item={item}/>
+                {products.map((item) => (
+                    <LikeCard key={products._id} item={item}/>
                 ))}
             </div>
         </div>

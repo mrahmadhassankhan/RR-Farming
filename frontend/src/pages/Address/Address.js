@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import CSS from "./Address.module.css";
-import img from "../../images/contact.png";
 import Loader from "../Loader/Loader";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
@@ -17,23 +16,18 @@ const EnterDetailsBuy = () => {
   const [country, setCountry] = useState("");
   const [address, setAddress] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-
-  const [productImage, setProductImage] = useState("");
-  const [productName, setProductName] = useState("");
+  const [productname, setProductName] = useState("");
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState("");
-  const [price, setPrice] = useState("");
-
-
+  const [price, setPrice] = useState(0);
 
     useEffect(() => {
       const storedItemDetails = sessionStorage.getItem('buyItem');
-      const item = storedItemDetails ? JSON.parse(storedItemDetails) : null;
-      setProductImage(item.productImage);
+      const item = storedItemDetails ? JSON.parse(storedItemDetails):{};
       setProductName(item.productName);
       setDescription(item.description);
       setQuantity(item.quantity);
-      setPrice(item.newPrice);
+      setPrice(150+parseInt(item.newPrice));
     }, []);
 
     const handleSubmitOrder = async (e) => {
@@ -47,7 +41,7 @@ const EnterDetailsBuy = () => {
           city,
           country,
           address,
-          productName,
+          productname,
           description,
           quantity,
           price
@@ -55,7 +49,7 @@ const EnterDetailsBuy = () => {
         toast.success("Your order has been successfully placed! Our team will communicate with you on WhatsApp. Thank you!");
         resetFormFields();
       } catch (err) {
-        toast.error("Error in placing order. Please try again.");
+        toast.error("Error in placing order check email. Please try again.");
       }
     };
     
@@ -69,7 +63,6 @@ const EnterDetailsBuy = () => {
       setAddress("");
       sessionStorage.removeItem('buyItem');
     };
-    
 
   useEffect(() => {
     const loading = async () => {
@@ -92,7 +85,7 @@ const EnterDetailsBuy = () => {
               <h1 className={CSS["contact-title"]}>Address Details</h1>
               <div className={CSS["contactus-container"]}>
                 <div className={CSS["contactus-details"]}>
-                  <form >
+                    <form onSubmit={handleSubmitOrder}>
                   <div className={CSS["contactus-subject-container"]}>
                       <label className={CSS["contactus-label"]} htmlFor="_email"  >
                         Email<span className={CSS["contactus-star"]}>*</span>
@@ -139,16 +132,16 @@ const EnterDetailsBuy = () => {
                       <textarea rows={3} className={CSS["contactus-message"]} id="_address" name="_address" onChange={(e)=>setAddress(e.target.value)} value={address} placeholder={"Address"} required
                       ></textarea>
                     </div>
-                    <button onClick={handleSubmitOrder} className={CSS["send-btn"]} type="submit">
+                    <button  className={CSS["send-btn"]} type="submit">
                       Order placed
                     </button>
                   </form>
                 </div>
                 <div className={CSS["contactus-img"]}>
-                  <img className={CSS["img"]} src={img} alt="img" />
-                  <h1>Name: {productName}</h1>
+                  <h1>Name: {productname}</h1>
                   <p>Description: {description}</p>
-                  <p>Quantity: {quantity}</p>
+                    <p>Quantity: {quantity}</p>
+                    <p>Delivery charges should be applied and added in total amount. Rs.150</p>
                   <h2>Price: {price}</h2>
                 </div>
               </div>

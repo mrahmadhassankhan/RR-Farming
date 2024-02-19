@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import CSS from './AddtocartCard.module.css'
 import { Link } from 'react-router-dom'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const AddtocartCard = () => {
     const [quantity, setQuantity] = useState(1);
@@ -37,15 +35,13 @@ const AddtocartCard = () => {
                     <p className={CSS['addtocart-details']}>{clickedItem.description}</p>
                     <p className={CSS['addtocart-reviews']}>Available quantity: {clickedItem.quantity}</p>
                     <div className={CSS['addtocart-quantity']}>
-                        Qty: <input min={0} max={20} type='number' id='quantity' name='quantity' className={CSS['addtocart-qty-input']} placeholder='0' value={quantity} onChange={(e)=>setQuantity(e.target.value)} required />
+                        Qty: <input min={1} max={20} type='number' id='quantity' name='quantity' className={CSS['addtocart-qty-input']} placeholder='0' value={quantity} onChange={(e)=>setQuantity(e.target.value)} required />
                     </div>
                     <Link to={'/address'} className={CSS['addtocart-link']}>
                         <button type='button' onClick={handleBuyClick}  className={CSS['addtocart-link-btn']}>Buy now</button>
                     </Link>
-                    <button type='submit' onClick={() => toast.success('Item Added to Cart')} className={CSS['addtocart-link-btn']}>Add to cart</button>
                 </div>
             </div>
-            <ToastContainer/>
         </div>
     )
 }

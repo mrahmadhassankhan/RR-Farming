@@ -36,10 +36,9 @@ const Contact = () => {
         name, email, subject, message,
       })
       .then((res) => {
-        console.log(res.data);
+        toast.success("Query send");
       })
-      .catch((err) => console.error(err));
-    toast.success("Query is successfully send")
+      .catch((err) => toast.error("Error in sending query"));
     setEmail('');
     setName('');
     setMessage('');
@@ -71,7 +70,7 @@ const Contact = () => {
                   <img className={CSS['img']} src={img} alt='img' />
                 </div>
                 <div className={CSS['contactus-details']}>
-                  <form onSubmit={handleFromEmail}>
+                  <form onSubmit={handleFromEmail} >
                     <div className={CSS['contactus-name_email-container']}>
                       <div className={CSS['contactus-name-container']}>
                         <label className={CSS['contactus-label']} htmlFor="_fullName">Full Name<span className={CSS['contactus-star']}>*</span></label>
@@ -90,7 +89,7 @@ const Contact = () => {
                       <label className={CSS['contactus-label']} htmlFor="_message">Message<span className={CSS['contactus-star']}>*</span></label>
                       <textarea rows={3} className={CSS['contactus-message']} id="_message" name="_message" onChange={handleMessage} value={message} placeholder={'Message'} required ></textarea>
                     </div>
-                    <button className={CSS['send-btn']} type='submit'>Send Message</button>
+                      <button className={CSS['send-btn']} type='submit'>Send Message</button>
                   </form>
                 </div>
               </div>
