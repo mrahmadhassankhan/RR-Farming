@@ -45,7 +45,7 @@ const Home = () => {
         <div>
           <Header />
           <div className={CSS['whatsapp-link-div']}>
-            <Link target='_blank' to={'https://wa.me/+923008169527'} className={CSS['whatsapp-link']}><img className={CSS['whatsapp-img']} src={whatsapp} alt={whatsapp} height={'70px'} width={'70px'}/></Link>
+            <Link to={'https://wa.me/+923008169527'} className={CSS['whatsapp-link']}><img className={CSS['whatsapp-img']} src={whatsapp} alt={whatsapp} height={'70px'} width={'70px'}/></Link>
           </div>
           <TitleSection fetchedData={fetchedData} />
           <CategorySection fetchedData={fetchedData} />
