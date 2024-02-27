@@ -22,7 +22,7 @@ const MenuRoutes = () => {
         <Route path='/contact' element={<Contact />} />
         <Route path='/login' element={<Login />} />
         <Route path='/forgetpassword' element={<ForgetPassword />} />
-        <Route path='' element={<CheckOut />} />
+        <Route path='/checkout' element={<CheckOut />} />
         <Route path='/search-results' element={<SearchShow />} />
         <Route path='/address' element={<Address />} />
       </Routes>

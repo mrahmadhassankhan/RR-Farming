@@ -1,43 +1,21 @@
-import React,{useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import CSS from './CheckData.module.css'
 import { Link } from 'react-router-dom'
 import CheckOutCard from './CheckOutCard/CheckOutCard'
-import rabbitmeat from '../../Home/TrendProductSection/images/rabbitmeat1.jpg'
-import rabbit from '../../Home//TrendProductSection/images/rabbit1.jpg'
-import rabbitmeat2 from '../../Home/TrendProductSection/images/rabbitmeat2.jpg'
-import rabbit2 from '../../Home//TrendProductSection/images/rabbit2.jpg'
 
 
 const CheckData = () => {
-    const [CartObject, setCartItems] = useState([{
-        id:1,
-        title: "Rabbit Balgain",
-        price: 24.90,
-        quantity: 9,
-        img: rabbit
-    }, {
-        id:2,
-        title: "Angora Meat",
-        price: 67.90,
-        quantity: 5,
-        img: rabbitmeat
-    },
-    {
-        id:3,
-        title: "Rabbit Balgain",
-        price: 24.90,
-        quantity: 1,
-        img: rabbit2
-    }, {
-        id:4,
-        title: "Angora Meat",
-        price: 67.90,
-        quantity: 2,
-        img: rabbitmeat2
-    }])
+    const [CartObject, setCartItems] = useState([])
+    useEffect(() => {
+        const storedListString = sessionStorage.getItem('listOfObjects');
+        const storedList = storedListString ? JSON.parse(storedListString) : [];
+        setCartItems(storedList);
+    }, [])
 
-    const handleRemoveItem = (itemId) => {
-        const updatedCartItems = CartObject.filter(item => item.id !== itemId);
+
+
+    const handleRemoveItem = (productImage) => {
+        const updatedCartItems = CartObject.filter(item => item.productImage !== productImage);
         setCartItems(updatedCartItems);
     }
     return (
@@ -48,8 +26,8 @@ const CheckData = () => {
                     <span className={CSS['back']} >Back</span>
                 </Link>
                 <h2 className={CSS['my-cart']} >My Cart</h2>
-                {CartObject.map((item, index) => (
-                    <CheckOutCard key={item.id} CartItem={item} onRemove={handleRemoveItem} />
+                {CartObject.map((item) => (
+                    <CheckOutCard key={item.productImage} CartItem={item} onRemove={handleRemoveItem} />
                 ))}
 
                 <div className={CSS['containter-checkbox']}>
@@ -65,8 +43,8 @@ const CheckData = () => {
                     <p className={CSS['checkbox-details3']}>Agree to the Term and Condition?</p>
                 </div>
                 <div>
-                    <Link to={''}>
-                        <button className={CSS['payment-btn']}>Proceed to Payment</button>
+                    <Link to={'/address'}>
+                        <button className={CSS['payment-btn']}>Proceed to Details</button>
                     </Link>
                     <Link to={'/'}>
                         <button className={CSS['back-shop-btn']}>Back to Shop</button>
@@ -80,7 +58,6 @@ const CheckData = () => {
 export default CheckData
 
 
-// className={CSS['']} 
 
 
 

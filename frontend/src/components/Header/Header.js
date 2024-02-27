@@ -1,6 +1,4 @@
-// Header.js
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CSS from './Header.module.css';
 import { Link } from 'react-router-dom';
 import RR_Logo from '../../images/RR192.png';
@@ -9,6 +7,12 @@ import Login from '../../pages/Login/Login'
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [showLoginPopup, setShowLoginPopup] = useState(false);
+    const [length, setLength] = useState(0);
+    useEffect(() => {
+        const storedListString = sessionStorage.getItem('listOfObjects');
+        const storedList = storedListString ? JSON.parse(storedListString) : [];
+        setLength(storedList.length);
+    }, [])
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -33,9 +37,10 @@ const Header = () => {
                     <li className={CSS.items}><Link className={CSS.navItem} to={'/aboutus'}>About</Link></li>
                 </ul>
                 <div className={CSS['cart-login-container']}>
-                    {/* <Link to={'/checkout'} className={CSS.action_btn}>
+                    <Link to={'/checkout'} className={CSS.action_btn}>
                         <i className="fa-solid fa-cart-shopping"></i>
-                    </Link> */}
+                        <span className={CSS['cart-length']}>{length}</span>
+                    </Link>
                     <div className={CSS.action_btn} onClick={toggleLoginPopup}>
                         <i className="fa-solid fa-user"></i>
                     </div>
@@ -49,7 +54,7 @@ const Header = () => {
                 <li className={CSS.items}><Link className={CSS.navItem} to={'/category'}>Categories</Link></li>
                 <li className={CSS.items}><Link className={CSS.navItem} to={'/contact'}>Contact</Link></li>
                 <li className={CSS.items}><Link className={CSS.navItem} to={'/aboutus'}>About</Link></li>
-                <li onClick={toggleLoginPopup} className={CSS.items}><Link  className={CSS.action_btn} >Login</Link></li>
+                <li onClick={toggleLoginPopup} className={CSS.items}><Link className={CSS.action_btn} >Login</Link></li>
             </div>
             {showLoginPopup && (
                 <div className={CSS.login_popup}>
