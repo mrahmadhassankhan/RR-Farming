@@ -4,10 +4,11 @@ import CSS from "./EditProduct.module.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from 'react-router-dom'
 
 const EditProduct = () => {
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
-  const [updateProduct, setUpdateProduct] = useState([]);
   useEffect(() => {
     fetchData();
   }, []);
@@ -24,12 +25,11 @@ const EditProduct = () => {
   };
 
   const handleEditProduct = (productId) => {
-    const productToUpdate = products.find((product) =>
-      product._id.includes(productId)
-    );
-    setUpdateProduct(productToUpdate);
-    console.log(updateProduct);
+    const productToUpdate = products.find((product) => product._id === productId);
+    localStorage.setItem('edit', JSON.stringify({ productToUpdate }));
+    navigate('/edit');
   };
+
 
   const handleDeleteProduct = (productId) => {
     axios
