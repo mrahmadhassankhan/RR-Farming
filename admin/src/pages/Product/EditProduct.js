@@ -14,7 +14,7 @@ const EditProduct = () => {
   }, []);
   const fetchData = () => {
     axios
-      .get("http://localhost:1783/api/getproduct")
+      .get("https://localhost:1783/api/getproduct")
       .then((res) => {
         const sortedProducts = res.data.sort((a, b) =>
           a.productName.localeCompare(b.productName)
@@ -33,7 +33,7 @@ const EditProduct = () => {
 
   const handleDeleteProduct = (productId) => {
     axios
-      .delete(`http://localhost:1783/api/deleteproduct/${productId}`)
+      .delete(`https://localhost:1783/api/deleteproduct/${productId}`)
       .then((res) => {
         fetchData();
         toast.success("Product deleted Successfully");
@@ -72,7 +72,7 @@ const EditProduct = () => {
               <td className={CSS["table-data"]}>{product.quantity}</td>
               <td className={CSS["table-data"]}>
                 <img
-                  src={`http://localhost:1783/Images/${product.productImage}`}
+                  src={`https://localhost:1783/Images/${product.productImage}`}
                   alt={product.productImage}
                   width={"80px"}
                   height={"80px"}

@@ -17,7 +17,7 @@ const AddCategory = () => {
     formData.append('categoryImage', categoryImage);
 
     try {
-       await axios.post("http://localhost:1783/api/postcategory", formData,
+       await axios.post("https://localhost:1783/api/postcategory", formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
       toast.success('Successfully Added Category')

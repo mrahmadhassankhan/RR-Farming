@@ -15,7 +15,7 @@ const EditCategory = () => {
 
   const fetchData = () => {
     axios
-      .get("http://localhost:1783/api/getcategory")
+      .get("https://localhost:1783/api/getcategory")
       .then((res) => {
         const sortedCategory = res.data.sort((a, b) =>
           a.categoryName.localeCompare(b.categoryName)
@@ -26,15 +26,10 @@ const EditCategory = () => {
   };
 
 
-  const handleEditCategory = (categoryId) => {
-    const categoryToUpdate = categories.find(category => category._id.includes(categoryId));
-    setUpdateCategory(categoryToUpdate);
-    console.log(updateCategory);
-  };
 
   const handleDeleteCategory = (categoryId) => {
     axios
-      .delete(`http://localhost:1783/api/deletecategory/${categoryId}`)
+      .delete(`https://localhost:1783/api/deletecategory/${categoryId}`)
       .then((res) => {
         fetchData();
         toast.success("Category deleted Successfully");
@@ -52,7 +47,6 @@ const EditCategory = () => {
           <tr>
             <th className={CSS['table-head-row']}>Category Name</th>
             <th className={CSS['table-head-row']}>Category Image</th>
-            {/* <th className={`${CSS['table-head-row']} ${CSS['table-head-btn']}`}>Edit Category</th> */}
             <th className={`${CSS['table-head-row']} ${CSS['table-head-btn']}`}>Delete Category</th>
           </tr>
         </thead>
@@ -63,11 +57,6 @@ const EditCategory = () => {
               <td className={CSS['table-data']}>
                 <img src={`http://localhost:1783/Images/${list.categoryImage}`} alt={list.categoryName} width={'80px'} height={'80px'} />
               </td>
-              {/* <td className={CSS['table-data']}>
-                <button  className={CSS['table-data-edit-btn']}  type='button'  onClick={()=>handleEditCategory(list._id)} >
-                  Edit
-                </button>
-              </td> */}
               <td className={CSS['table-data']}>
                 <button className={CSS['table-data-delete-btn']} type='button' onClick={() => handleDeleteCategory(list._id)} >
                   Delete

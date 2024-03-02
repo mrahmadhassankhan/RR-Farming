@@ -12,7 +12,7 @@ const Orders = () => {
   }, []);
   const fetchData = () => {
     axios
-      .get("http://localhost:1783/api/getorder")
+      .get("https://localhost:1783/api/getorder")
       .then((res) => {
         setOrders(res.data);
       })
@@ -21,7 +21,7 @@ const Orders = () => {
 
   const handleDeleteProduct =(orderid)=>{
     axios
-    .delete(`http://localhost:1783/api/deleteorder/${orderid}`)
+    .delete(`https://localhost:1783/api/deleteorder/${orderid}`)
     .then((res) => {
       fetchData();
       toast.success("Order deleted Successfully");
