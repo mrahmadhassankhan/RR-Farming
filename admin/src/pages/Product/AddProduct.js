@@ -26,7 +26,7 @@ const AddProduct = () => {
     formData.append("quantity", quantity);
     formData.append("productImage", productImage);
     try {
-      await axios.post("http://localhost:1783/api/postproduct", formData, {
+      await axios.post("https://localhost:1783/api/postproduct", formData, {
         headers: { "Content-Type": "multipart/form-data" }
       });
       toast.success("Product Added Successfully");
