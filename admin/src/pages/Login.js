@@ -14,11 +14,6 @@ function Login() {
         }
     ];
 
-    const errors = {
-        uname: "invalid username",
-        pass: "invalid password"
-    };
-
     const handleSubmit = (event) => {
         event.preventDefault();
 

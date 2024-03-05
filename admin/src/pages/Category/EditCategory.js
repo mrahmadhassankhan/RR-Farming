@@ -7,7 +7,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const EditCategory = () => {
   const [categories, setCategories] = useState([]);
-  const [updateCategory, setUpdateCategory] = useState([]);
 
   useEffect(() => {
     fetchData();
