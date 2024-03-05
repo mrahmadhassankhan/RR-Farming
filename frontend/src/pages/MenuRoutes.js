@@ -25,6 +25,7 @@ const MenuRoutes = () => {
         <Route path='/checkout' element={<CheckOut />} />
         <Route path='/search-results' element={<SearchShow />} />
         <Route path='/address' element={<Address />} />
+        <Route path='/address2' element={<Address />} />
       </Routes>
     </Router>
   );

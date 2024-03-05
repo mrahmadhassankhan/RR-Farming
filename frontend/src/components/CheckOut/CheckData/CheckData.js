@@ -43,7 +43,7 @@ const CheckData = () => {
                     <p className={CSS['checkbox-details3']}>Agree to the Term and Condition?</p>
                 </div>
                 <div>
-                    <Link to={'/address'}>
+                    <Link to={'/address2'}>
                         <button className={CSS['payment-btn']}>Proceed to Details</button>
                     </Link>
                     <Link to={'/'}>
