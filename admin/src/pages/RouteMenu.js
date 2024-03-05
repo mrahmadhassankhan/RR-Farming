@@ -8,6 +8,7 @@ import EditProduct from './Product/EditProduct'
 import Orders from './Query/Orders'
 import UserQuery from './Query/UserQuery'
 import Edit from './Product/Edit/Edit'
+import OrderDetails from '../pages//Query/OrderDetails'
 
 const RouteMenu = () => {
   return (
@@ -19,6 +20,7 @@ const RouteMenu = () => {
         <Route path='/addproduct' element={<AddProduct />} />
         <Route path='/editproduct' element={<EditProduct />} />
         <Route path='/orders' element={<Orders />} />
+        <Route path='/ordersdetails' element={<OrderDetails />} />
         <Route path='/userquery' element={<UserQuery />} />
         <Route path='/edit' element={<Edit />} />
       </Routes>

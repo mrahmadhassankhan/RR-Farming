@@ -14,7 +14,7 @@ const UserQuery = () => {
 
   const fetchData = () => {
     axios
-      .get("https://localhost:1783/api/getcontactus")
+      .get("http://localhost:1783/api/getcontactus")
       .then((res) => {
         setQueries(res.data);
       })
@@ -25,7 +25,7 @@ const UserQuery = () => {
 
   const handleDeleteCategory = (queryId) => {
     axios
-      .delete(`https://localhost:1783/api/deletecontactus/${queryId}`)
+      .delete(`http://localhost:1783/api/deletecontactus/${queryId}`)
       .then((res) => {
         fetchData();
         toast.success('Successfully Deleted Query');

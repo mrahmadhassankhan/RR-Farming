@@ -5,6 +5,21 @@
     padding: 15px;
 }
 
+.input-search{
+    height: 45px;
+    margin: 5px 50px;
+    width: 300px;
+    border: 1px solid var(--primary-color);
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    font-size: 1.1rem;
+}
+.input-search:focus{
+    outline-offset: -4px;
+    outline: 1px solid var(--primary-color);
+    border: none;
+}
+
 
 .table {
     background-color: var(--white-color);

@@ -15,7 +15,7 @@ const EditCategory = () => {
 
   const fetchData = () => {
     axios
-      .get("https://localhost:1783/api/getcategory")
+      .get("http://localhost:1783/api/getcategory")
       .then((res) => {
         const sortedCategory = res.data.sort((a, b) =>
           a.categoryName.localeCompare(b.categoryName)
@@ -29,7 +29,7 @@ const EditCategory = () => {
 
   const handleDeleteCategory = (categoryId) => {
     axios
-      .delete(`https://localhost:1783/api/deletecategory/${categoryId}`)
+      .delete(`http://localhost:1783/api/deletecategory/${categoryId}`)
       .then((res) => {
         fetchData();
         toast.success("Category deleted Successfully");
