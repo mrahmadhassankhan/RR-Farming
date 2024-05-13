@@ -133,10 +133,6 @@ export default function Footer() {
                   <Link to="https://linktr.ee/abubakarnangri">
                     Abu Bakar Siddique
                   </Link>{" "}
-                  |&nbsp;
-                  <Link to="https://linktr.ee/mrahmadhassankhan">
-                    Ahmad Hassan Khan
-                  </Link>
                 </p>
               </div>
             </div>
