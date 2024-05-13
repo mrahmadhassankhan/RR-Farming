@@ -132,7 +132,11 @@ export default function Footer() {
                   Copyright &copy; 2024, All Right Reserved By{" "}
                   <Link to="https://linktr.ee/abubakarnangri">
                     Abu Bakar Siddique
-                  </Link>{" "}
+                  </Link>
+                  &nbsp;|&nbsp;
+                  <Link to="https://linktr.ee/mrahmadhassankhan">
+                    Ahmad Hassan Khan
+                  </Link>
                 </p>
               </div>
             </div>
