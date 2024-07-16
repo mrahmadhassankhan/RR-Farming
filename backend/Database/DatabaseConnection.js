@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const dbURI = "mongodb+srv://admin:adminPassword@farming.kjjo4gd.mongodb.net/RR_Farming";
+const dbURI = process.env.DB_URI;
 
 mongoose.connect(dbURI);
 const db = mongoose.connection;
