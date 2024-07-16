@@ -37,7 +37,6 @@ RR Farming is designed to provide a seamless online shopping experience for cust
 - **Node.js**: JavaScript runtime
 - **Express**: Web framework for Node.js
 - **MongoDB**: NoSQL database
-- 
 ## Installation
 
 To run the project locally, follow these steps:
