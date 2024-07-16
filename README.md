@@ -108,6 +108,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Ahmad Hassan Khan - [Your LinkedIn](https://www.linkedin.com/in/mrahmadhassankhan) - codewithahk@gmail.com
+Ahmad Hassan Khan - [mrahmadhassankhan](https://www.linkedin.com/in/mrahmadhassankhan) - codewithahk@gmail.com
 
 Project Link: [https://github.com/mrahmadhassankhan/RR-Farming](https://github.com/mrahmadhassankhan/RR-Farming)
