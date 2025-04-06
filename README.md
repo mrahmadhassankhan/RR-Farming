@@ -65,7 +65,6 @@ To run the project locally, follow these steps:
 
 4. **Create a `.env` file in the backend directory and add your environment variables**:
     ```env
-    DB_URI=your_mongo_database_uri
     JWT_SECRET=your_jwt_secret
     ```
 
