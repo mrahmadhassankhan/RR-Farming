@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-
-const dbURI = process.env.DB_URI;
+const dbURI = "mongodb://localhost:27017/rrfarming";
 
 mongoose.connect(dbURI);
 const db = mongoose.connection;

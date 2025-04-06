@@ -7,16 +7,16 @@ const {
   errorHandler,
   notFound,
 } = require("../backend/middlewares/errorMiddleware");
-const PORT = process.env.PORT || 1783;
+const PORT = 1783;
 
 app.use(
   cors({
-    origin: ["http://localhost:6463",'http://localhost:6464'],
+    origin: ["http://localhost:6463", "http://localhost:6464"],
     credentials: true,
   })
 );
 app.use(express.json());
-app.use(express.static("public"))
+app.use(express.static("public"));
 
 // Define routes
 app.use("/api", userrouter);
